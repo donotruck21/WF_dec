@@ -1,0 +1,77 @@
+/*CSS reset settings here*/
+*{
+ margin: 0px;
+ padding: 0px;
+}
+a{
+  color: #63D4DF;
+}
+#wrapper{
+  width: 970px;
+  height: 585px;
+  margin: 10px;
+  background-color: #1B335D;
+  padding: 10px 0px 0px 0px;
+}
+#header{
+  width: auto;
+  height: 50px;
+  margin: 10px;
+  background-color: #CF3036;
+  border-radius: 10px;
+  color: #C2D6EC;
+  padding: 10px 0px 0px 20px;
+}
+#navbar{
+  height:170px;
+  width: 130px;
+  margin: 10px;
+  border-radius: 20px;
+  background-color: #2A7D8C;
+  display: inline-block;
+  vertical-align: top;
+  font-size: 12px;
+  padding:15px;
+}
+.ind1{
+  margin-left: 15px;
+  /*font-size: 12px;*/
+}
+.ind2{
+  margin-left: 30px;
+}
+#mainbody{
+  height:400px;
+  width: 735px;
+  margin: 10px;
+  border-radius: 20px;
+  background-color: #0E1822;
+  display: inline-block;
+  padding: 15px;
+  color: #C2D6EC;
+}
+#mainbody p{
+  margin: 5px 0px 0px 0px;
+  font-size: 12px;
+}
+#mainbody li{
+  margin: 15px;
+  font-size: 12px;
+}
+span{
+  color: #8293FA;
+}
+#footer {
+  width: auto;
+  height: 30px;
+  margin: 10px;
+  background-color: #5D6673;
+  border-radius: 10px;
+  color: #C2D6EC;
+  padding: 0px 0px 0px 20px;
+  font-size: 11px;
+}
+#footer p{
+  vertical-align: middle;
+  line-height: 30px;
+}

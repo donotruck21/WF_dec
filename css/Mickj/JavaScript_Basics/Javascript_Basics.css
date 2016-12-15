@@ -44,6 +44,10 @@ body {
   color: #5DC3CE;
 }
 
+#sublist {
+  list-style-type: none;
+}
+
 #nav ul {
   padding-left:19px;
   margin-top: 0px;

@@ -1,0 +1,98 @@
+
+#wrapper {
+  background-color: silver;
+  width: 1000px;
+  height: 649px;
+  padding: 20px;
+  border: 5px solid black;
+}
+#greenHeader {
+  background-color: green;
+  width: auto;
+  height: 100px;
+  margin: 0px 0px 20px;
+  border: 5px solid black;
+}
+
+#redWrapper {
+  text-align: center;
+  width: auto;
+  margin: 20px 0px;
+}
+.redBlocks {
+  background-color: red;
+  height: 100px;
+  width: 307px;
+  display: inline-block;
+  border: 5px solid black;
+}
+
+#red1 {
+  margin-right: 10px
+}
+
+#red2 {
+  margin: 0px 10px;
+}
+
+#red3 {
+  margin-left: 10px;
+}
+.blueContainer {
+  background-color: blue;
+  height: 100px;
+  width: auto;
+  margin: 20px 0px;
+  border: 5px solid black;
+  text-align: center;
+}
+.yellow {
+  background-color: yellow;
+  border: 5px solid black;
+  display: inline-block;
+  height: 70px;
+  width: 468px;
+}
+
+#leftYellow {
+  margin: 10px 5px 10px 10px;
+}
+
+#rightYellow {
+ margin: 10px 10px 10px 5px
+}
+
+#purpleContainer {
+  background-color: purple;
+  height: 250px; /*using 60px space and borders*/
+  width: auto;
+  margin: 20px 0px 0px;
+  border: 5px solid black;
+}
+
+.white {
+  background-color: white;
+  height: 95px;
+  width: 95px;
+  margin: 10px;
+  border: 5px solid black;
+  display: inline-block;
+}
+
+#leftWhiteBlock {
+  /*float: left;*/
+
+}
+
+#rightWhiteBlock {
+  float: right;
+
+}
+
+#pinkRectangle {
+  background-color: pink;
+  height: 95px;
+  width: auto;
+  border: 5px solid black;
+  margin: 0px 10px 10px;
+}

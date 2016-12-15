@@ -1,9 +1,0 @@
-Step 1: cd Desktop/
-Step 2: mkdir test
-Step 3: touch index.html styles.css commands.txt
-Step 4: cp index.html index2.html
-Step 5: cd .. | mkdir destination
-Step 6: mv index2.html ../destination
-Step 7: cd tests/ | rm styles.css
-Step 8: ls | cd .. | cd destination | ls
-Step 9: cd .. | rm -rf destination

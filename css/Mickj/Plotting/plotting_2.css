@@ -1,0 +1,71 @@
+div {
+  border: 3px solid black;
+}
+
+.main-container {
+  background-color: silver;
+  padding: 15px;
+}
+
+.greenbox {
+  background-color: #009900;
+  height: 125px;
+  width: auto;
+  margin-bottom: 10px;
+}
+
+.redbox {
+  background-color: red;
+  height: 150px;
+  width: 300px;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+#middle {
+  margin-left: 16px;
+  margin-right: 16px;
+}
+
+.bluebox {
+  background-color: #0066CC;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.yellowbox {
+  display: inline-block;
+  background-color: #FFFF33;
+  height: 100px;
+  width: 450px;
+}
+
+#yellow_left {
+  margin-right: 11.5px;
+}
+
+.purplebox {
+  background-color: #330066;
+  padding: 15px;
+}
+
+.whitebox {
+  background-color: white;
+  display: inline-block;
+  height: 150px;
+  width: 150px;
+  margin-bottom: 10px;
+}
+
+#left {
+  margin-right: 605px;
+}
+
+
+
+.pinkbox {
+
+  background-color: magenta;
+  height: 120px;
+  width: auto;
+}

@@ -96,11 +96,19 @@ margin-left: -20px;
   height: 300px;
   width: 250px;
 }
+#bodyInfo h3{
+  margin-top: 15px;
+  color:#FFD42E;
+}
+#bodyInfo h4{
+  margin-top: 15px;
+}
 #bodyInfo {
   display: inline-block;
-  border: 2px dotted green;
   height: 300px;
   width: 640px;
   margin: 20px 0px 0px;
   vertical-align: top;
+  color: white;
+  text-align: center;
 }

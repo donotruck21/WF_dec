@@ -1,0 +1,60 @@
+/*CSS reset settings here*/
+*{
+ margin: 0px;
+ padding: 0px;
+}
+#wrapper{
+ width: 1000px;
+ height: 630px;
+ background-color: silver;
+ margin: 10px;
+ padding: 20px 0px 0px 0px;
+}
+#header{
+  width: auto;
+  height: 100px;
+  background-color: green;
+  margin: 0px 20px 20px;
+}
+.red{
+  width: 303px;
+  height: 100px;
+  background-color: red;
+  display: inline-block;
+  margin: 0px 0px 20px 20px;
+}
+#blueContainer{
+  width: auto;
+  height: 100px;
+  background-color: blue;
+  margin: 0px 20px 20px;
+}
+.yellow{
+  width: 460px;
+  height: 80px;
+  background-color: yellow;
+  margin: 10px 0px 10px 10px;
+  display: inline-block;
+}
+#purpleContainer{
+  width: auto;
+  height: 240px;
+  background-color: purple;
+  margin: 0px 20px 20px;
+}
+.white{
+  width: 200px;
+  height: 100px;
+  background-color: white;
+  margin: 20px 20px 20px;
+  display: inline-block;
+}
+#right{
+  float:right;
+}
+#pink{
+  width: auto;
+  height: 80px;
+  background-color: pink;
+  margin: 0px 20px 20px;
+}

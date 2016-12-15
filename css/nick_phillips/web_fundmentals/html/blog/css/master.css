@@ -1,0 +1,15 @@
+#italic_text{
+  font-style: italic;
+}
+.radio{
+  display: inline;
+}
+p{
+  text-align: center;
+}
+.center{
+  text-align: center;
+}
+#ul{
+  list-style: none;
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="If you are a member you can see this blog!">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nick's Blog</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/master.css">
+  </head>
+  <body>
+    <div class='container'>
+      <div class="jumbotron center">
+        <h1 >Nick's Blog</h1>
+        <p>Welcome to my blog! Things you can discuss here...</p>
+        <ul id="ul">
+          <li>Politics</li>
+          <li>Religion</li>
+          <li>Football</li>
+        </ul>
+      </div>
+      <div class="users">
+        <h3>Online Users</h3>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Occupation</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Nick</td>
+              <td>Coder</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="posts">
+        <h3>Today's Blog</h3>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">This election <small>by Nick 11/4/16</small></h3>
+          </div>
+          <div class="panel-body">
+            This election is <span id='italic_text'>killing me</span>. Too see why, <a target="_blank" href="http://fivethirtyeight.com/features/election-update-why-clintons-position-is-worse-than-obamas/">click here...</a>
+          </div>
+        </div>
+      </div>
+      <form>
+        <h3>Please submit</h3>
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input id="name" class="form-control" type="text" name="name" placeholder="Enter name">
+        </div>
+        <div class="form-group">
+          <label for="angerLevel">Does this election make you angry?</label>
+          <select id="angerLevel" class="form-control">
+            <option selected disabled>Choose Anger Level (1-5)</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <h5>Political Affiliation:</h5>
+          <input type="radio" name="party" value="Democrat"><span>&nbsp;&nbsp;Democrat</span>&nbsp;
+          <input type="radio" name="party" value="Republican"><span>&nbsp;&nbsp;Republican</span>
+        </div>
+        <div class="form-group">
+          <label>Please check all of the following places you have been:</label><br/>
+          <input type="checkbox" name="places" value="Chicago"><span>&nbsp;&nbsp;Chicago</span>&nbsp;
+          <input type="checkbox" name="places" value="San Francisco"><span>&nbsp;&nbsp;San Francisco</span>
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </body>
+</html>

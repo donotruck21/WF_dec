@@ -1,10 +1,10 @@
-.container{
+#container{
   width:970px;
   position: absolute;
   background-color: #1D345C;
   padding: 15px;
 }
-.header{
+#header{
   padding-left: 8px;
   border-radius: 20px;
   background-color: #CC323A;
@@ -12,16 +12,16 @@
   margin-bottom: 15px;
   margin-top: -17px;
 }
-.header h1{
+#header h1{
   padding: 15px;
 }
-.sidebar{
+#sidebar{
   padding: 23px;
   border-radius: 20px;
   background-color: #2E7D8B;
   float: left;
 }
-.body{
+#body{
   padding: 8px 18px;
   border-radius: 20px;
   background-color: #0E1821;
@@ -30,7 +30,7 @@
   width: 680px;
   margin-bottom: 20px;
 }
-.footer{
+#footer{
   padding: 3px;
   padding-left: 14px;
   clear: both;

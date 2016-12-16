@@ -1,0 +1,17 @@
+#container{
+	width: 960px;
+	background-color: grey;
+	overflow: hidden;
+	height: auto;
+}
+#box1,#box2,#box3{
+	background-color: green;
+	height: 200px;
+	width: 200px;
+	border:1px solid black;
+	margin: 20px;
+	padding: 20px;
+}
+#box1, #box2{
+	float: right;
+}

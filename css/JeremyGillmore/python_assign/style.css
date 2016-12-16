@@ -1,0 +1,159 @@
+/*CSS reset settings here*/
+*{
+ margin: 0px;
+ padding: 0px;
+}
+#wrapper{
+  width: 970px;
+  height: 850px;
+  margin: 10px;
+  background-color: #245076;
+  padding: 10px 0px 0px 0px;
+  position: absolute;
+}
+#header{
+  margin: 0px 10px;
+  height: 100px;
+}
+#pythonPic{
+  width:300px;
+  height:100px;
+  display: inline-block;
+}
+#pythonPic img{
+  height: 100px;
+}
+#searchBox{
+  display: inline-block;
+  width: 638px;
+  height: 100px;
+  vertical-align: top;
+}
+#textSize{
+  text-align: right;
+  margin-right: 40px;
+}
+#textSize span{
+  color:white;
+}
+#textSize a{
+  color: #D1B000;
+}
+#searchInput{
+  height: 60px;
+  width: 240px;
+  border-radius: 15px;
+  background-color: #444444;
+  /*display: inline-block;*/
+  position: absolute;
+  right: 10px;
+  padding-left: 60px;
+  box-shadow: 2px 2px 0px 0px;
+}
+#searchInput input{
+  height: 30px;
+  margin: 12px 0px 0px 0px;
+  text-align: center;
+
+}
+#blueButton{
+  border-radius: 4px;
+  background-color: #245076;
+  color: white;
+}
+#navBar{
+  background-color: #487EAD;
+  height: 40px;
+  width: auto;
+  text-align: center;
+  box-shadow: 3px 3px 0px 0px;
+  font-size: 24px;
+  vertical-align: middle;
+  line-height: 40px;
+  margin: 10px 20px 0px 50px;
+  border-radius: 5px;
+}
+#navBar span{
+  color: white;
+  margin: 0px 20px;
+}
+#bodyLinks ul{
+  list-style-position: inside;
+}
+#bodyLinks li{
+  margin: 10px 0px;
+  font-size: 18px;
+  color:white;
+  text-align: center;
+}
+#bodyLinks a{
+color:white;
+margin-left: -20px;
+}
+#bodyLinks {
+  margin: 20px 0px 0px 50px;
+  display: inline-block;
+  height: 300px;
+  width: 250px;
+}
+#bodyInfo h3{
+  margin-top: 15px;
+  color:#FFD42E;
+}
+#bodyInfo h4{
+  margin-top: 15px;
+}
+#bodyInfo {
+  display: inline-block;
+  height: 300px;
+  width: 640px;
+  margin: 20px 0px 0px;
+  vertical-align: top;
+  color: white;
+  text-align: center;
+}
+#whiteBody {
+  background-color: white;
+  height:240px;
+  width: auto;
+  padding-left: 55px;
+  padding-top: 20px;
+}
+.whiteInfo p{
+  margin-top: 10px;
+}
+.whiteInfo a{
+  text-decoration: none;
+  color: #78AAD6;
+}
+.whiteInfo ul{
+  margin-left: 50px;
+}
+.whiteInfo {
+  text-align: center;
+  border-top: 5px solid #73A7D5;
+  display: inline-block;
+  padding-right: 100px;
+  padding-left: 20px;
+  height: 200px;
+  width: 305px;
+  margin-right: 20px;
+  vertical-align: top;
+}
+#footer {
+  margin-top: 60px;
+  width: auto;
+  height: 120px;
+  color: #86B8E4;
+  text-align: center;
+}
+#footer p{
+  font-size: 12px;
+  margin-top: 20px;
+}
+#footer a{
+  color: #86B8E4;
+  font-size: 16;
+  text-decoration: none;
+  margin: 60px 20px 20px 20px;
+}

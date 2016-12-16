@@ -1,0 +1,77 @@
+#container{
+	background-color: #1d345c;
+	width: 1300px;
+	height: 1000px;
+	padding: 5px;
+	margin: 20px;
+	color: #C3D7EB;
+}
+#header{
+	background-color: crimson;
+	border-radius: 20px;
+	height: 300px
+	color: #C3D7EB;
+	margin: 5px 5px 20px 5px;
+	padding: 5px 0;
+}
+#header h1{
+	padding: 0px 0px 0px 20px;
+	font-size: 40px;
+}
+#nav{
+	background-color: teal;
+	border-radius: 20px;
+	height: auto;
+	width: 260px;
+	display: inline-block;
+	float: left;
+	margin: 0px 20px 0 5px;
+	padding: 10px;
+}
+#nav a{
+	color: #46AFD5;
+	font-size: 20px;
+	font-weight: bold;
+}
+#home{
+	text-decoration: none;
+	color: #46AFD5;
+	font-size: 20px;
+	text-decoration: underline;
+	list-style-type: none;
+}
+#content{
+	background-color: black;
+	border-radius: 20px;
+	display: inline-block;
+	width: 940px;
+	height: auto;
+	color: #C3D7EB;
+	padding: 0 20px 20px 20px;
+	font-size: 20px;
+}
+#content a{
+ 	color: #46AFD5;
+}
+#content h2{
+	font-size: 30px;
+}
+.blue-text{
+	color: #7A91FF;
+}
+#footer{
+	background-color: dimgray;
+	height: 80px;
+	border-radius: 20px;
+}
+#footer a{
+	color: #46AFD5;
+}
+#footer p{
+	padding: 30px 0 0 20px;
+	font-size: 20px;
+}
+#Home{
+	list-style: none;
+	text-indent: -25px;
+}

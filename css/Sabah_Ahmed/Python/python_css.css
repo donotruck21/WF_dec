@@ -1,0 +1,188 @@
+*{
+  font-family: arial;
+}
+
+#container{
+  background-color: rgb(28,62,99);
+  margin-top: 10px;
+  display: inline-block;
+  width: 950px;
+  height: 1000px;
+
+}
+#toprightindex{
+    height: 5px;
+    width: 900px;
+    text-align: right;
+}
+#toprightindex span{
+  color: rgb(255,255,255);
+}
+#toprightindex a{
+  color: rgb(196,164,0);
+}
+#topleft{
+  width: 400px;
+  height: 100px;
+  display: inline-block;
+  padding-top: 10px;
+}
+#search_area{
+  vertical-align: top;
+  box-shadow: 2px 2px 1px rgb(22,23,25);
+  display: inline-block;
+  background-color: rgb(52,52,52);
+  height: 70px;
+  width: 300px;
+  border-radius: 15px;
+  margin-left: 225px;
+  margin-top: 20px;
+}
+#searchForm{
+    display: inline-block;
+}
+#searchBar{
+  width: 170px;
+  height: 30px;
+  margin-top: 20px;
+  margin-left: 25px;
+}
+#go_button{
+  display: inline-block;
+  height: 23px;
+  width: 40px;
+  background-color: rgb(28,62,99);
+  border: 1px solid silver;
+  color: white;
+  text-align: center;
+  font-size: 14px;
+  padding-top: 10px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 1px rgb(22,23,25);
+}
+
+#nav_banner{
+  width: 850px;
+  height: 50px;
+  background-color: rgb(55,105,157);
+  border-radius: 5px;
+  margin-left: 40px;
+  margin-top: 20px;
+  box-shadow: 2px 2px 1px rgb(22,23,25);
+}
+
+#nav_banner li{
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 30px;
+  margin-right: 20px;
+  font-size: 1.3em;
+  margin-top: 12px;
+  height: 55px;
+  color: white;
+}
+
+#links_area{
+  display: inline-block;
+  height: 300px;
+  width: 250px;
+  padding-top: 10px;
+}
+
+#links_area li{
+  color: white;
+  text-align: center;
+  text-decoration: underline;
+  list-style-position: inside;
+  line-height: 35px;
+}
+
+#python_description{
+  color: white;
+  font-size: 14px;
+  text-align: center;
+  display: inline-block;
+  height: 75px;
+  width: 650px;
+  vertical-align: top;
+  margin-left: 10px;
+}
+#zen_of_python{
+  color: white;
+  text-align:center;
+  display: inline-block;
+  height: 200px;
+  width: 650px;
+  line-height: 33px;
+}
+#zen_of_python ul{
+  list-style: none;
+    font-size: 19px;
+}
+#zen_of_python span{
+  color: rgb(196,164,0);
+  font-style: italic;
+}
+
+#white_area{
+  background-color: white;
+  height: 300px;
+  width: 950px;
+  padding-top: 10px;
+}
+#white_area h3{
+  text-align: center;
+}
+#white_area p{
+  text-align: center;
+}
+#white_area ul{
+  text-align: center;
+}
+#white_area a{
+    color: rgb(103,154,205);
+}
+#white_left{
+  border-top: solid rgb(103,154,205) 5px;
+  vertical-align: top;
+  display: inline-block;
+  justify-content: center;
+  height: 310px;
+  width: 410px;
+  padding-left: 49px;
+  padding-right: 15px;
+}
+#white_right{
+  border-top: solid rgb(103,154,205) 5px;
+  vertical-align: top;
+  display: inline-block;
+  justify-content: center;
+  height: 310px;
+  width: 410px;
+  padding-left: 15px;
+  padding-right: 45px;
+}
+#bottom_menu{
+  width: 850px;
+  height: 50px;
+  padding-top: 70px;
+  margin-left: 50px;
+  background-color: rgb(28,62,99);
+
+}
+#bottom_menu li{
+  display: inline-block;
+  margin-left: 75px;
+  color: rgb(103,154,205);
+  font-size: 20px;
+}
+#copyright {
+    height: 5px;
+
+    width: 950px;
+    color: rgb(103,154,205);
+}
+#copyright span{
+  font-size: 12px;
+  margin: 400px;
+}

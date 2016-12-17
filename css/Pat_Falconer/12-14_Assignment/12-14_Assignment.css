@@ -1,0 +1,91 @@
+#container{
+	background-color: grey;
+	width: 1000px;
+	height: 1200px;
+	margin: 20px auto;
+	border-style: solid;
+	border-width: 5px;
+	border-color: black;
+	padding: 20px;
+}
+#green{
+	background-color: green;
+	width: 980px;
+	height: 190px;
+	border-style: solid;
+	border-color: black;
+	border-width: 5px;
+}
+#red{
+	width: 900px;
+	height: 200px;
+	text-align: center;
+	padding: 20px 0;
+}
+.redblock{
+	border-width: 5px;
+	width: 275px;
+	height: 190px;
+	background-color: red;
+	border-width: 5px;
+	border-style: solid;
+	border-color: black;
+	display: inline-block;
+	margin: auto;
+}
+#blue{
+	background-color: blue;
+	width: 980px;
+	height: 190px;
+	border-style: solid;
+	border-width: 5px;
+	margin: 20px auto;
+}
+.yellow{
+	background-color: yellow;
+	border-width: 5px;
+	border-style: solid;
+	height: 145px;
+	width: 450px;
+	display: inline-block;
+	margin: 20px 0 0 20px;
+}
+#purple{
+	background-color: purple;
+	height: 490px;
+	width: 980px;
+	border-style: solid;
+	border-color: black;
+	border-width: 5px;
+	margin: 20px auto;
+}
+.white1{
+	background-color: white;
+	width: 200px;
+	height: 100px;
+	display: inline-block;
+	border-width: 5px;
+	border-color: black;
+	border-style: solid;
+	margin: 20px 20px 10px 20px;
+}
+.white2{
+	background-color: white;
+	width: 200px;
+	height: 100px;
+	display: inline-block;
+	border-width: 5px;
+	border-color: black;
+	border-style: solid;
+	margin: 20px 20px 10px 20px;
+	float: right;
+}
+#pink{
+	background-color: pink;
+	width: 930px;
+	height: 120px;
+	border-width: 5px;
+	border-style: solid;
+	margin: 10px 20px 20px 20px;
+	display: block;
+}

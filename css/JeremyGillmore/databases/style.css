@@ -1,0 +1,88 @@
+/*CSS reset settings here*/
+*{
+ margin: 0px;
+ padding: 0px;
+}
+a{
+  color: #4213F5;
+}
+#wrapper{
+  width: 968px;
+  height:auto;
+}
+#header {
+  background: linear-gradient(#EEF0EC, #FFFFFF);
+  height: 100px;
+  width: auto;
+}
+#header img{
+  height: 100px;
+  width:175px;
+  margin-left: 7px;
+}
+#header h3{
+  display: inline-block;
+  margin: 50px 0px 0px 400px;
+  vertical-align: top;
+}
+#header table{
+  border-collapse:collapse;
+}
+#header td{
+  border: 2px solid #737373;
+  font-size: 12px;
+  padding: 5px 41px 5px 40px;
+  background: linear-gradient(#FFFFFF, #EEF0EC, #FFFFFF);
+}
+#body {
+  height: 700px;
+  width: auto;
+  margin-top: 30px;
+  background: radial-gradient(#6C5866, #1A0B10);
+}
+#imgBorder{
+  border: 6px solid #C0C0C0;
+  display: inline-block;
+  height: 250px;
+  width: 500px;
+  margin: 15px 0px 0px 15px;
+}
+#databases {
+  height:262px;
+  width: 41.5%;
+  margin: 15px 15px 0px 15px;
+  display: inline-block;
+  background: linear-gradient(to right, #F4FDFF, #DACBD9);
+  vertical-align: top;
+}
+.headerBack{
+  height: 30px;
+  width: 100%-10px;
+  background: linear-gradient(#C5C1C6, #8C8996, #C5C1C6);
+  padding: 0px 0px 0px 10px;
+  vertical-align: middle;
+  line-height: 30px;
+}
+#databases h5{
+  margin: 10px;
+}
+#databases p{
+  margin: 15px 10px;
+  font-size: 12px;
+}
+.bodyInfo{
+  margin: 15px 0px 15px 15px;
+  width: 22.6%;
+  height: 380px;
+  display: inline-block;
+  vertical-align: top;
+  background: linear-gradient(white, #98A5C0, white);
+}
+.bodyInfo img{
+  width: 100%;
+  height: 150px;
+}
+.bodyInfo p{
+  font-size: 12px;
+  margin: 10px;
+}

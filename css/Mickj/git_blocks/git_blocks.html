@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Git Basics</title>
+    <link rel="stylesheet" type="text/css" href="git_blocks.css">
+  </head>
+  <body>
+    <div id="page">
+      <div id="header">
+        <img src="github-icon.png" alt="github-icon">
+        <h2>Git Basics</h2>
+        <ul>
+          <li><a href="#">What is git?</a></li>
+          <li><a href="#">What is GitHub?</a></li>
+          <li><a href="#">How do you use git and GitHub?</a></li>
+          <li><a href="#">More resources</a></li>
+        </ul>
+      </div>
+      <div id="main_cont">
+        <div id="what" class="box">
+          <h2>What is Git?</h2>
+          <p id="tight_text">Git is a version control system; you can think of it as a series of smapshots (commits) of your code base. With the creation of each snapshot you build out a whole application, seeing the growth of a full app. During this time you can make branches to experiment and come back to a previous snapshot you took merge those experiments into your app.</p>
+          <h2>What is GitHub?</h2>
+          <p>GitHub is a code hosting platform for version control and collaboration. It lets you and others work together on projects from anywhere using those code snapshots that you took during development. </p>
+        </div>
+        <div id="right_cont">
+          <div id="top">
+            <div class="box square">
+              <h3>Git init</h3>
+              <p><span class="highlight">Git init</span> is the act of registering this current code base.</p>
+            </div>
+            <div class="box square">
+              <h3>Git add</h3>
+              <p><span class="highlight">Git add</span> is how we stage the integration of our current code base into our current list of snapshots</p>
+            </div>
+            <div class="box square">
+              <h3>Git status</h3>
+              <p><span class="highlight">Git status</span> allows us to see the changes we are going to make.</p>
+            </div>
+          </div>
+          <div id="middle">
+            <div class="box rectangle">
+              <h3>Git commit</h3>
+              <p><span class="highlight">Git commit</span>; finally we can commit those changes we added to our ast snapshot giving us a new snapshot of our code with whatever new changes were made.</p>
+            </div>
+            <div class="box rectangle">
+              <h3>Git remote add</h3>
+              <p><span class="highlight">Git remote add</span> is used to set up an online repository where we can place all of our current code. This is where the outside world can see our code base.</p>
+            </div>
+          </div>
+          <div id="bottom" class="box">
+            <h3>Git push</h3>
+            <p><span class="highlight">Git push</span> is how we get our code to GitHub, an excellent place to store all of our repositories. Other developers might look at our existing projects to see how we approached problems, pull down our code and add new features or even update our code base with features they wanted to add.</p>
+          </div>
+        </div>
+      </div>
+      <div id="footer">
+        <p>You can learn more about Git and GitHub here: <a href="#">Github Guides</a></p>
+      </div>
+    </div>
+  </body>
+</html>

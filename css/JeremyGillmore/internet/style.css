@@ -43,9 +43,9 @@
 #sideBar {
   display: inline-block;
   width: 130px;
+  vertical-align: top;
 }
 #sideInfo {
-  /*background-color: yellow;*/
   padding: 20px 0px;
   border-bottom: 1px solid silver;
 }
@@ -83,4 +83,69 @@ input{
   width: 50%;
   margin:0px 25% 10px 25%;
   display: block;
+}
+#body {
+  display: inline-block;
+  width:800px;
+  margin-left: 20px;
+  font-size: 14px;
+}
+#bodyHead {
+  border-bottom: 1px solid silver;
+  width: 800px;
+  position: absolute;
+  display: inline-block;
+  padding-bottom: 32px;
+}
+#contact{
+  display: inline-block;
+  position: absolute;
+  right: 0px;
+  font-size: 8px;
+}
+#contactInfo{
+  display: inline-block;
+}
+#contact span {
+  font-size: 16px;
+  font-weight: bold;
+}
+#contact img {
+  display: inline-block;
+  height: 30px;
+}
+#Home {
+  vertical-align: top;
+  height: 15px;
+}
+#bodyInfo{
+  margin-top: 60px;
+}
+li{
+  margin:5px 0px 5px 40px;
+}
+#bodyInfo img{
+  height: 80px;
+  margin: 0px 30%;
+}
+#bodyFooter img{
+  height: 70px;
+  display: inline-block;
+}
+#bodyFooter {
+  border-top: 4px solid #0085E0;
+  border-left: 4px solid #0085E0;
+  border-right: 4px solid #0085E0;
+  padding: 10px;
+}
+#fInfo{
+  display: inline-block;
+  width: 86%;
+  margin-left: 10px;
+}
+#fInfo p{
+  margin-top: 6px;
+}
+a{
+  text-decoration: none;
 }

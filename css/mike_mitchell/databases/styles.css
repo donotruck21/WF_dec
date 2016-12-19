@@ -90,7 +90,7 @@ nav ul li a {
 }
 
 .headlineGradient {
-  background: linear-gradient (top, #D0CDD1, #888694, #D0CDD1);
+  background: linear-gradient(top, #D0CDD1, #888694, #D0CDD1);
   background: -webkit-linear-gradient(top, #D0CDD1, #888694, #D0CDD1);
   background: -o-linear-gradient(top, #D0CDD1, #888694, #D0CDD1);
   background: -moz-linear-gradient(top, #D0CDD1, #888694, #D0CDD1);

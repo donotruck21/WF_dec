@@ -1,0 +1,151 @@
+/*CSS reset settings here*/
+*{
+ margin: 0px;
+ padding: 0px;
+ font-family: sans-serif;
+}
+#wrapper {
+  margin:10px;
+  height: 1000px;
+  width: 970px;
+}
+.whiteTxt{
+  color: white;
+}
+.blueTxt{
+  color: #22659E;
+}
+.redTxt{
+  color: #D9231D;
+}
+.lBlueTxt{
+  color: #1EA3B8;
+}
+#header img{
+  height: 55px;
+  display: inline-block;
+}
+#header p{
+  vertical-align: top;
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 30px;
+}
+#blueHeader{
+  background: linear-gradient(#26679F, #4F81AB, #26679F);
+  padding: 10px;
+  font-size: 20px;
+  margin-top: -15px;
+}
+#bodyBackground {
+  background: linear-gradient(#E3E3E3, #FFFFFF, #FFFFFF, #FFFFFF, #FFFFFF);
+}
+#sideBar {
+  display: inline-block;
+  width: 130px;
+  vertical-align: top;
+}
+#sideInfo {
+  padding: 20px 0px;
+  border-bottom: 1px solid silver;
+}
+#sideInfo h5{
+  font-size: 11px;
+}
+#sideInfo h6{
+  margin: 10px 0px 15px;
+  font-size: 9px;
+}
+input{
+  width: 100%;
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px 0px;
+  font-size: 11px;
+}
+.blueBack{
+  background-color: #437FB1;
+}
+.lBlueBack{
+  background-color: #48CADF;
+}
+.orangeBack{
+  background-color: #ED8C11;
+}
+#sidePic{
+  background: url("images/ad_background.png");
+  padding:10px 5px 15px 5px;
+  text-align: center;
+  background-size: 100% 100%;
+  margin-top: 20px;
+}
+#sidePic img{
+  width: 50%;
+  margin:0px 25% 10px 25%;
+  display: block;
+}
+#body {
+  display: inline-block;
+  width:800px;
+  margin-left: 20px;
+  font-size: 14px;
+}
+#bodyHead {
+  border-bottom: 1px solid silver;
+  width: 800px;
+  position: absolute;
+  display: inline-block;
+  padding-bottom: 32px;
+}
+#contact{
+  display: inline-block;
+  position: absolute;
+  right: 0px;
+  font-size: 8px;
+}
+#contactInfo{
+  display: inline-block;
+}
+#contact span {
+  font-size: 16px;
+  font-weight: bold;
+}
+#contact img {
+  display: inline-block;
+  height: 30px;
+}
+#Home {
+  vertical-align: top;
+  height: 15px;
+}
+#bodyInfo{
+  margin-top: 60px;
+}
+li{
+  margin:5px 0px 5px 40px;
+}
+#bodyInfo img{
+  height: 80px;
+  margin: 0px 30%;
+}
+#bodyFooter img{
+  height: 70px;
+  display: inline-block;
+}
+#bodyFooter {
+  border-top: 4px solid #0085E0;
+  border-left: 4px solid #0085E0;
+  border-right: 4px solid #0085E0;
+  padding: 10px;
+}
+#fInfo{
+  display: inline-block;
+  width: 86%;
+  margin-left: 10px;
+}
+#fInfo p{
+  margin-top: 6px;
+}
+a{
+  text-decoration: none;
+}

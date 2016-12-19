@@ -1,0 +1,182 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+#wrapper {
+  width: 970px;
+  margin: 0 auto;
+}
+
+#logoArea {
+  width: 970px;
+  height: 125px;
+  background: linear-gradient(#EFF1ED, #FFFFFF);
+  background: -webkit-linear-gradient(#EFF1ED, #FFFFFF);
+  background: -o-linear-gradient(#EFF1ED, #FFFFFF);
+  background: -moz-linear-gradient(#EFF1ED, #FFFFFF);
+}
+
+#logoArea img {
+  display: inline-block;
+  width: 175px;
+  margin: 0px 0px 15px 15px;
+}
+
+#logoArea h2 {
+  width: 745px;
+  display: inline-block;
+  text-align: right;
+  vertical-align: top;
+  margin: 55px 30px 0px 0px
+}
+
+nav {
+  width: 968px;
+  height: 35px;
+  border: 1.5px solid black;
+  background: #EFF1ED;
+  background: -webkit-linear-gradient(#FFFFFF, #EFF1ED, #FFFFFF);
+  background: -o-linear-gradient(#FFFFFF, #EFF1ED, #FFFFFF);
+  background: -moz-linear-gradient(#FFFFFF, #EFF1ED, #FFFFFF);
+  background: linear-gradient(#FFFFFF, #EFF1ED, #FFFFFF);
+}
+nav ul {
+  display: inline-block;
+}
+
+nav ul li {
+  height: 35px;
+  border-right: 1.5px solid black;
+  padding: 0px 10px;
+  display: inline-block;
+  vertical-align: top;
+  margin-right: -5px;
+}
+
+nav ul li a {
+  display: inline-block;
+  padding: 9px 30px;
+  vertical-align: top;
+  font-size: 14px;
+}
+
+#mainContent {
+  width: 970px;
+  height: 810px;
+  background: linear-gradient(left, #3A3248, #6B5866, #3A3248);
+  background: -webkit-linear-gradient(left, #3A3248, #6B5866, #3A3248);
+  background: -o-linear-gradient(left, #3A3248, #6B5866, #3A3248);
+  background: -moz-linear-gradient(left, #3A3248, #6B5866, #3A3248);
+}
+
+#databaseCollage {
+  width: 500px;
+  margin: 15px 15px 0px 15px;
+  border: 5px solid gray;
+  display: inline-block;
+}
+
+#aboutDatabases {
+  width: 400px;
+  height: 338px;
+  margin: 15px 25px 0px 0px;
+  display: inline-block;
+  vertical-align: top;
+  background: linear-gradient(left, #F3FCFE, #DACBD9);
+  background: -webkit-linear-gradient(left, #F3FCFE, #DACBD9);
+  background: -o-linear-gradient(left, #F3FCFE, #DACBD9);
+  background: -moz-linear-gradient(left, #F3FCFE, #DACBD9);
+}
+
+.headlineGradient {
+  background: linear-gradient (top, #D0CDD1, #888694, #D0CDD1);
+  background: -webkit-linear-gradient(top, #D0CDD1, #888694, #D0CDD1);
+  background: -o-linear-gradient(top, #D0CDD1, #888694, #D0CDD1);
+  background: -moz-linear-gradient(top, #D0CDD1, #888694, #D0CDD1);
+}
+
+#aboutDatabases h4 {
+  height: 16px;
+  padding: 10px;
+}
+
+#aboutDatabases h5 {
+  padding: 5px;
+}
+
+#aboutDatabases p {
+  padding: 5px;
+  font-size: 12px;
+}
+
+#tinyMiddleLine {
+  font-size: 10px;
+  text-align: right;
+  vertical-align: middle;
+  margin: 0px 35px 3px 3px;
+  color: #576791;
+}
+
+#tinyMiddleLine img {
+height: 15px;
+width: 15px;
+border: none;
+margin: 3px;
+vertical-align: middle;
+}
+
+.bottomContent h4 {
+height: 16px;
+padding: 10px;
+font-size: initial;
+}
+
+.bottomContent {
+  width: 216px;
+  height: 410px;
+  border: 1px solid #BCBCBD;
+  display: inline-block;
+  vertical-align: top;
+  margin: 0px 0px 15px 15px;
+  font-size: 12px;
+  background: linear-gradient(#98A6C0, #FFFFFF);
+  background: -webkit-linear-gradient(#98A6C0, #FFFFFF);
+  background: -o-linear-gradient(#98A6C0, #FFFFFF);
+  background: -moz-linear-gradient(#98A6C0, #FFFFFF);
+}
+
+.bottomContent p {
+  padding: 5px;
+}
+.bottomContent img {
+  width: 216px;
+  height: 150px;
+}
+
+.bottomContent form input {
+  height: 25px;
+  width: 80px;
+  border: 3px solid black;
+  box-shadow: 0px 3px 5px #000000;
+  color: #FFFFFF;
+  background-color: #5C729C;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+#storage form {
+  margin: 50px 0px 15px 120px;
+}
+
+#searching form {
+  margin: 5px 15px 15px 120px;
+}
+#interaction form {
+  margin: 20px 15px 15px 120px;
+}
+
+#companies form {
+  margin: 35px 15px 15px 120px;
+}

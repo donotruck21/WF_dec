@@ -1,0 +1,44 @@
+#page {
+  width: 645px;
+  background-color: #D4D1B0;
+  padding: 20px;
+}
+
+#header img{
+  height: 50px;
+  width: 100px;
+  margin-top: 10px;
+}
+
+#header img:nth-child(1) {
+  margin-left: 90px;
+}
+
+#header h1 {
+  display: inline-block;
+}
+
+.column {
+  display: inline-block;
+  width: 125px;
+  vertical-align: top;
+}
+
+.blue {
+  background-color:  #84B5EB;
+}
+
+.pink {
+  background-color: #F16A72;
+}
+
+.block {
+  padding: 10px;
+  border: 3px solid black;
+  display: inline-block;
+  margin-bottom: 5px;
+}
+
+img{
+  height:100px;
+}

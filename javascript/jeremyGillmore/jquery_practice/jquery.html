@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <title>jQuery practice</title>
+      <link rel="stylesheet" type="text/css" href="style.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+   </head>
+   <body>
+     <script>
+       $(document).ready( function(){
+         $("#hideBtn").click(function(){
+           $("#hideTxt").hide()
+         })
+         $("#showBtn").click(function(){
+           $("#hideTxt").show()
+         })
+         $("#toggleBtn").click(function(){
+           $("#toggleTxt").toggle()
+         })
+         $("#slideUpBtn").click(function(){
+           $("#slideUpTxt").slideUp()
+         })
+         $("#slideDownBtn").click(function(){
+           $("#slideUpTxt").slideDown();
+         })
+         $("#slideToggleBtn").click(function(){
+           $("#slideToggleTxt").slideToggle();
+         })
+         $("#fadeInBtn").click(function(){
+           $("#fadeInTxt").fadeIn();
+         })
+         $("#fadeOutBtn").click(function(){
+           $("#fadeInTxt").fadeOut();
+         })
+         $("#addClassBtn").click(function(){
+           $("#addClassTxt").addClass("blue");
+         })
+         $("#beforeBtn").click(function(){
+           $("#beforeTxt").before("before");
+         })
+         $("#afterBtn").click(function(){
+           $("#beforeTxt").after("after");
+         })
+         $("#appendBtn").click(function(){
+           $("#beforeTxt").append("append");
+         })
+         $("#htmlBtn").click(function(){
+           $("#htmlTxt").html("<p> the html code has been changed");
+         })
+         $("#attrBtn").click(function(){
+           $("#attrTxt").attr("id", "bblue");
+         })
+         $("#valBtn").click(function(){
+           $(".valTxt").val("value of the button was changed");
+         })
+         $("#textBtn").click(function(){
+           $("#textTxt").text("text of the object was changed");
+         })
+       })
+     </script>
+     <div class = "box">
+       <h1>.hide function</h1>
+       <p id = "hideTxt">Click on the button below to hide my text</p>
+       <button id = "hideBtn">click to hide</button>
+       <button id = "showBtn">click to hide</button>
+       <hr>
+     </div>
+     <div class = "box">
+       <h1>.toggle function</h1>
+       <p id = "toggleTxt">Click on the button below to hide/show my text</p>
+       <button id = "toggleBtn">click to toggle</button>
+       <hr>
+     </div>
+     <div class = "box">
+       <h1>.slideDown and .slideUp function</h1>
+       <p id = "slideUpTxt">Click on the button below to hide/show my text</p>
+       <button id = "slideUpBtn">click to slide Up</button>
+       <button id = "slideDownBtn">click to slide Down</button>
+       <hr>
+     </div>
+     <div class = "box">
+       <h1>.slidetoggle function</h1>
+       <p id = "slideToggleTxt">Click on the button below to hide/show my text</p>
+       <button id = "slideToggleBtn">click to toggle slide</button>
+       <hr>
+     </div>
+     <div class = "box">
+       <h1>.fadeIn and .fadeOut function</h1>
+       <p id = "fadeInTxt">Click on the button below to hide/show my text</p>
+       <button id = "fadeInBtn">click to fade in</button>
+       <button id = "fadeOutBtn">click to fade out</button>
+       <hr>
+     </div>
+     <div class = "box">
+       <h1>.addClass function</h1>
+       <p id = "addClassTxt">Click on the button below to alter my text</p>
+       <button id = "addClassBtn">click to add blue class</button>
+       <hr>
+     </div>
+     <div class = "box">
+       <h1>.before after and apend function</h1>
+       <p id = "beforeTxt">Click on the button below to hide/show my text</p>
+       <button id = "beforeBtn">click to add before</button>
+       <button id = "afterBtn">click to add after</button>
+       <button id = "appendBtn">click to apend</button>
+       <hr>
+     </div>
+     <div class = "box">
+       <h1>.html function</h1>
+       <p id = "htmlTxt">Click on the button below to hide/show my text</p>
+       <button id = "htmlBtn">click to html</button>
+       <hr>
+     </div>
+     <div class = "box">
+       <h1>.attr function</h1>
+       <p id = "attrTxt">Click on the button below to hide/show my text</p>
+       <button id = "attrBtn">click to hide</button>
+       <hr>
+     </div>
+     <div class = "box">
+       <h1>.val function</h1>
+       <input type = "submit" class = "valTxt" value = "button value">
+       <button id = "valBtn">click to change btn txt</button>
+       <hr>
+     </div>
+     <div class = "box">
+       <h1>.text function</h1>
+       <p id = "textTxt">Click on the button below to hide/show my text</p>
+       <button id = "textBtn">click to hide</button>
+       <hr>
+     </div>
+   </body>
+ </html>

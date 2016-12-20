@@ -1,0 +1,18 @@
+#image{
+  height:20px;
+  width: 20px;
+  display: none;
+}
+.method{
+  text-align: center;
+}
+img{
+  height: 20px;
+  width: 20px;
+}
+#siblingP, #siblingPToggle, #siblingPFade{
+  display: none;
+}
+.addClass{
+  color: red;
+}

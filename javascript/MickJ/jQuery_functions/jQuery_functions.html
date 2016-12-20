@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>jQuery Functions</title>
+    <link rel="stylesheet" type="text/css" href="jQuery_functions.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js">
+    </script>
+    <script type='text/javascript'>
+      $(document).ready(function() {
+        $("#hide-button").click(function() {
+          $("#hide-p").hide();
+        });
+        $("#show-button").click(function() {
+          $("#hide-p").show();
+        });
+        $("#toggle-button").click(function() {
+          $("#toggle-text").toggle();
+        });
+        $("#slideup").click(function() {
+          $("#slide-text").slideUp();
+        });
+        $("#slidedown").click(function() {
+          $("#slide-text").slideDown();
+        });
+        $("#toggleSlidebtn").click(function(){
+          $("#headslide").slideToggle();
+        });
+        $("#fadeout").click(function(){
+          $("#fadehead").fadeOut();
+        });
+        $("#fadein").click(function(){
+          $("#fadehead").fadeIn();
+        });
+        $("#classBtn").click(function(){
+          $("#added").addClass("addedRed");
+        });
+        $("#beforeBtn").click(function(){
+          $("#beforeText").before("<p>$$$ </p>");
+        })
+        $("#afterBtn").click(function(){
+          $("#afterText").after("<p> :) :) :)</p>");
+        });
+        $("#appendBtn").click(function(){
+          $("#appendBox").append("<p>This is new text</p>")
+        });
+        $("#htmlBtn").click(function(){
+          $("#htmlBox").html("<p>This is new text</p>")
+        });
+        $("#attrBtn").click(function() {
+          $("#attrImg").attr("src", "http://lorempixel.com/100/100/sports/2");
+        });
+        $("#valBtn").click(function(){
+          $("#textbox").val("New text!!!");
+        });
+        $("#textBtn").click(function(){
+          $("#textHead").text("NEW HEADERRRRR");
+        });
+        $("#dataBtn1").click(function() {
+          $("#dataBtn1").data("greeting","It Worked!");
+        });
+        $("#dataBtn2").click(function() {
+          alert($("#dataBtn1").data("greeting"));
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <h1>jQuery Practice</h1>
+    <div class="container">
+      <h2>.hide and .show</h2>
+      <button id="hide-button" type="button" name="button">HIDE TEXT</button>
+      <button id="show-button" type="button" name="button">SHOW TEXT</button>
+      <p id="hide-p">Click hide button to make me disappear! </p>
+    </div>
+    <div class="container">
+      <h2>.toggle</h2>
+      <button id="toggle-button" type="button" name="button">TOGGLE TEXT</button>
+      <p id="toggle-text">Click button to toggle text.</p>
+    </div>
+    <div class="container">
+      <h2>.slideUp and .slideDown</h2>
+      <button id="slideup" type="button" name="button">Slide up</button>
+      <button id="slidedown" type="button" name="button">Slide down</button>
+      <p id="slide-text">Click buttons to slide up or slide down.</p>
+    </div>
+    <div class="container">
+      <h2 id= "headslide">.slideToggle</h2>
+      <button id="toggleSlidebtn" type="button" name="button">CLICK</button>
+      <p>Click Button to toggle slide header</p>
+    </div>
+    <div class="container">
+      <h2 id="fadehead">.fadeOut and .fadeIn</h2>
+      <button id="fadeout" type="button" name="button">FADE OUT</button>
+      <button id="fadein" type="button" name="button">FADE IN</button>
+      <p>Click button to fade header in or out.</p>
+    </div>
+    <div class="container">
+      <h2 id="added">.addClass</h2>
+      <button id="classBtn" type="button" name="button">CLICK</button>
+      <p>Click button to make the header red.</p>
+    </div>
+    <div class="container">
+      <h2>.before</h2>
+      <button id="beforeBtn" type="button" name="button">CLICK</button>
+      <p id="beforeText">Click button to insert cash before me.</p>
+    </div>
+    <div class="container">
+      <h2>.after</h2>
+      <button id="afterBtn" type="button" name="button">CLICK</button>
+      <p id="afterText">Click button to insert smileys after me</p>
+    </div>
+    <div class="container">
+      <h2>.append</h2>
+      <button id="appendBtn" type="button" name="button">CLICK</button>
+      <div class="box" id="appendBox">
+        <p>Click to add text to this box.</p>
+      </div>
+    </div>
+    <div class="container">
+      <h2>.html</h2>
+      <button id="htmlBtn" type="button" name="button">CLICK</button>
+      <div class="box" id="htmlBox">
+        <p>Click button for new text in this box.</p>
+      </div>
+    </div>
+    <div class="container">
+      <h2>.attr</h2>
+      <button id="attrBtn" type="button" name="button">CLICK</button>
+      <p>Click button to change picture</p>
+      <img id="attrImg" src="http://lorempixel.com/100/100/sports/1" alt="img">
+    </div>
+    <div class="container">
+      <h2>.val</h2>
+      <button id="valBtn" type="button" name="button">CLICK</button>
+      <p>Click button to change textbox's value</p>
+      <form>
+        <input id="textbox" type="text" name="textbox" value="Some text">
+      </form>
+    </div>
+    <div class="container">
+      <h2 id="textHead">.text</h2>
+      <button id="textBtn" type="button" name="button">CLICK</button>
+      <p>Click button to change text of header.</p>
+    </div>
+    <div class="container">
+      <h2>.data</h2>
+      <button id="dataBtn1" type="button" name="button">Data1</button>
+      <button id="dataBtn2" type="button" name="button">Data2</button>
+      <p>Click Data1 to store "It Worked" into secret folder. Press Data2 to read secret folder</p>
+    </div>
+  </body>
+</html>

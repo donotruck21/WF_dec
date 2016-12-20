@@ -1,0 +1,51 @@
+body {
+  width: 500px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.container {
+  border: 2px solid black;
+  padding-bottom: 30px;
+}
+.container h2 {
+  text-align: center;
+}
+
+.container button {
+  display: inline-block;
+  margin: 0px 30px 0px 0px;
+  height: 40px;
+  width: 80px;
+  font-family: helvetica;
+  color: white;
+  background: linear-gradient(rgb(237, 122, 122), rgb(119, 58, 51));
+  border: 1px solid black;
+  border-radius: 10px;
+  box-shadow: 3px 3px 3px black;
+  ;
+}
+
+p {
+  display: inline-block;
+  text-align: center;
+}
+
+.addedRed {
+  color: red;
+}
+
+.box {
+  border: 1px solid black;
+  display: inline-block;
+  width: 300px;
+}
+
+#textbox {
+  text-align: center;
+  height:50px;
+  width: 100px;
+  border: 1px solid red;
+}

@@ -2,7 +2,7 @@ for (var daysTilBirthday = 60; daysTilBirthday > 0; daysTilBirthday--)
 {
   if (daysTilBirthday > 30)
   {
-    console.log(daysTilBirthday, "days until my birthday. Such a long tim... :(");
+    console.log(daysTilBirthday, "days until my birthday. Such a long time... :(");
   }
   else if (daysTilBirthday > 5) {
     console.log(daysTilBirthday, "days until my birthday. its getting close :)");

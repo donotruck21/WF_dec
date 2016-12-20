@@ -25,7 +25,7 @@ for(var key in users)
 {
   console.log(key);
   for(var i = 0; i < users[key].length; i++)
-  {
-    console.log(i + 1 + " - " + users[key][i].first_name + " " + users[key][i].last_name + " - " + (users[key][i]["first_name"].length + users[key][i]["last_name"].length));
-  }
+  { 
+    console.log(i + 1 + " - " + users[key][i]["first_name"] + " " + users[key][i].last_name + " - " + (users[key][i]["first_name"].length + users[key][i]["last_name"].length));
+  } ////                        Students['first_name']
 }

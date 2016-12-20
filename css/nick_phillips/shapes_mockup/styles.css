@@ -1,0 +1,60 @@
+body{
+  position: relative;
+}
+#square{
+  height: 140px;
+  width: 140px;
+  background: blue;
+  margin-bottom: 10px;
+}
+.circle{
+  height: 140px;
+  width: 140px;
+  border-radius: 50%;
+  background: blue;
+  position: relative;
+  z-index: 100;
+}
+#square1{
+  position: relative;
+  height: 140px;
+  width: 140px;
+  background: blue;
+  z-index: 0;
+}
+#square2{
+  position: absolute;
+  /* border: 1px solid red; */
+  bottom: 24px;
+  left: 90px;
+  height: 180px;
+  width: 180px;
+  background: white;
+  transform: rotate(61deg);
+  z-index: 1;
+}
+#square3{
+  position: absolute;
+  /* border: 1px solid red; */
+  bottom: 10px;
+  left: -144px;
+  height: 180px;
+  width: 180px;
+  background: white;
+  transform: rotate(24deg);
+  z-index: 1;
+}
+#pacman{
+  position: relative;
+  margin-top: 10px;
+  z-index: 2;
+}
+#smallSquare{
+  background: white;
+  height: 70px;
+  width: 70px;
+  position: absolute;
+  top: 35px;
+  left: 85px;
+  transform: rotate(45deg);
+}

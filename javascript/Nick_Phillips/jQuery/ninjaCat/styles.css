@@ -1,0 +1,15 @@
+.col-xs-12{
+  text-align: center;
+}
+h1, h3{
+  text-align: center;
+}
+h3{
+  margin-top: 0px !important;
+}
+img{
+  margin: 5px 0px;
+  width: 100%;
+  max-width: 385px !important;
+  height: auto;
+}

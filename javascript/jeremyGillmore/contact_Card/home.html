@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <title>jQuery practice</title>
+      <link rel="stylesheet" type="text/css" href="style.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+   </head>
+   <body>
+     <script>
+       $(document).ready(function(){
+         $("#submitBtn").click(function(){
+           $("#cards").append("<div class = 'idCard' alt-data = '<p>"+$("#des").val()+"</p>'><h1>"+$("#fn").val()+" "+$("#ln").val()+"</h1><p>Click Card for description</p>");
+           $("#fn").val("");
+           $("#ln").val("");
+           $("#des").val("");
+         })
+       })
+       $(document).on("click", ".idCard", function(){
+         var temp = $(this).attr("alt-data");
+         $(this).attr("alt-data", $(this).html())
+         $(this).html(temp);
+       })
+     </script>
+     <div id="inputInfo">
+       <form>
+         First Name: <input id = "fn" type="text" name="firstName" placeholder = "First Name"><br>
+         Last Name: <input id = "ln" type="text" name="lastName" placeholder="Last Name"><br>
+         Description: <input id = "des" type="text" name="description" placeholder="Description"><br>
+       </form>
+       <button id="submitBtn">Add User</button><br>
+     </div>
+     <div id = "cards">
+     </div>
+   </body>
+</html>

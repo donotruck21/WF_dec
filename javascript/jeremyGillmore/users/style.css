@@ -1,0 +1,26 @@
+*{
+  padding: 0px;
+  margin: 0px;
+}
+table{
+border-collapse: collapse;
+}
+td{
+  border: 2px solid black;
+  padding: 0px 10px;
+}
+h1{
+  margin: 30px 15px 0px;
+}
+body {
+  padding: 20px;
+}
+#submitBtn{
+  padding:5px;
+}
+#userInfo{
+  width: 300px;
+  text-align: right;
+  border-top:3px solid black;
+  padding-top:20px;
+}

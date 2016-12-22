@@ -11,7 +11,7 @@ function longpal(str){
             break;
           }
           if(i + count >= k-count){
-            for(var x = i; x <=k; x++){
+            for(var x = i; x < k + 1; x++){
               current += str[x];
             }
             if(longest.length < current.length){
@@ -28,7 +28,8 @@ function longpal(str){
   return longest;
 }
 
-console.log(longpal("My favorite racecar exploded"));
+console.log(longpal("My favorite race car exploded"));
+console.log(longpal("Myfavoriteracecarexploded"));
 // console.log(longpal("my daddy"));
 // console.log(longpal("uh..."));
 // console.log(longpal("uh.!?"));

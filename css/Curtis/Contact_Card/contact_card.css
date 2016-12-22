@@ -1,0 +1,50 @@
+#left_input{
+  display: inline-block;
+  width: 350px;
+  height: 400px;
+}
+.inputs{
+  display: block;
+  margin-bottom: 20px;
+}
+.inputs input{
+  border: 2px solid black;
+  margin-left: 12px;
+}
+#description{
+  display: block;
+  width: 150px;
+  height: 100px;
+}
+#move_textarea{
+  display: block;
+  padding-top: 30px;
+
+}
+#description_box{
+  display: block;
+  height: 75px;
+  width: 250px;
+  margin-bottom: 20px;
+  border: 2px solid black;
+}
+#right_pane{
+  display: inline-block;
+  width: 400px;
+  vertical-align: top;
+}
+.card{
+  height: 140px;
+  width: 300px;
+  border: 2px solid black;
+  margin-top: 10px;
+  text-align: center;
+}
+.style_card_header{
+  font-size: 35px;
+  height: 25px;
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+.style_card_description{
+}

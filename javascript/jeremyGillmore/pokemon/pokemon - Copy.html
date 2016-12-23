@@ -1,0 +1,37 @@
+<!--a project by Jeremy Gillmore and Mick Johnson -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Pokemon</title>
+    <link rel="stylesheet" type="text/css" href="pokemon.css">
+    <script type="text/javascript" src='http://code.jquery.com/jquery-1.10.2.min.js'></script>
+    <script type="text/javascript">
+
+
+      $(document).ready(function(){
+        var url = "";
+        for(var i = 1; i <= 151; i++) {
+          (function (i){
+            $.get("http://pokeapi.co/api/v1/pokemon/"+i+"/", function(res) {
+              url = "<img id='" + i + "'  src='http://pokeapi.co/media/img/" + i + ".png'>";
+              $("#pokemon").append(url);
+              $("#"+i).data("entry", res);
+            })
+          })(i);
+        }
+      })
+      $(document).on("click", "img", function(){
+      });
+    </script>
+  </head>
+  <body>
+    <div id="pokemon">
+    </div>
+    <div id="pokedex">
+      <div id="logo">
+        <img src='http://vignette3.wikia.nocookie.net/logopedia/images/e/e5/Pokemon_logo.png/revision/latest?cb=20120128115827' alt='logo'>
+      </div>
+    </div>
+  </body>
+</html>

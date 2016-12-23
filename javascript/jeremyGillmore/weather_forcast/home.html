@@ -1,0 +1,25 @@
+<!-- 50f86b1fde2ef5b3efd506139f5d2b6b -->
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <title>weather app</title>
+      <link rel="stylesheet" type="text/css" href="style.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+   </head>
+   <body>
+     <script>
+     $(document).ready(function() {
+       $('button').click(function() {
+         var city = $("#city").val();
+         $.get("http://api.openweathermap.org/data/2.5/weather?q="+city+"&units=imperial&APPID=50f86b1fde2ef5b3efd506139f5d2b6b", function(res) {
+           console.log(res);
+            $("body").append("<h1>" + res.name + ", " + res.sys.country + "</h1><p>Tempurature: " + Math.floor(res.main.temp) + " &degF")
+         }, 'json');
+        return false;
+    });
+});
+     </script>
+     <input id = "city" type = "text" placeholder = "Enter City">
+     <button>Search Weather</button>
+   </body>
+</html>

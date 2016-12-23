@@ -1,0 +1,24 @@
+*{
+  padding:0px;
+  margin:0px;
+}
+
+img {
+  height:200px;
+  width: 355px;
+  margin:10px;
+}
+#info {
+  /*height: 600px;*/
+  border: 3px solid black;
+}
+body {
+  padding: 20px;
+}
+#info{
+  text-align: center;
+  padding: 20px;
+}
+#info p{
+  margin: 30px;
+}

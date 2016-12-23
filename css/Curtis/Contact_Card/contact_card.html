@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Contact Card</title>
+    <meta name="contact cart" content="contact card">
+    <link rel="stylesheet" type="text/css" href="contact_card.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script>
+    var create;
+    var first;
+    var last;
+    var open_p;
+    var closed_p;
+    var open_header;
+    var closed_header;
+    var cardCount = 0;
+      $(document).ready(function(){
+        $("#add_user").click(function(){
+            var open_div = '<div class="card" id =  "card'+ cardCount +'" data='+$("#description_box").val()+'>';
+            first =$("input[name=first_name]").val();
+            last =$("input[name=last_name]").val();
+            open_p = '<p class="style_card_description">';
+            closed_p = 'Click for description!</p>';
+            open_header ='<h1 class="style_card_header">';
+            closed_header ="</h1>";
+            var closed_div ="</div>";
+            create = open_div+open_header+first+' '+last+closed_header+open_p+closed_p+closed_div;
+          $("#right_pane").append(create);
+          var temp = "#card"+cardCount;
+          console.log($(temp).html())
+          $(temp).data("front_of_card", open_header+first+' '+last+closed_header+open_p+closed_p)
+          $(temp).data("back_of_card", $("#description_box").val())
+          cardCount++;
+        })
+        $(document).on('click','.card',function(){
+            if($(this).data("back_of_card") == $(this).html()){
+              $(this).html($(this).data("front_of_card"));
+            }else{
+              $(this).html($(this).data("back_of_card"));
+            }
+        })
+      })
+    </script>
+  </head>
+  <body>
+    <div id="left_input">
+      <form id="information" action="index.html" method="post">
+        <label class="inputs">
+          First name:<input type="text" name="first_name">
+        </label>
+        <label class="inputs">
+          Last name:<input type="text" name="last_name">
+        </label>
+        <label id="move_textarea" class="inputs">
+        Description:
+        </label>
+        <textarea id="description_box" name="description" form="information" placeholder="Enter description"></textarea>
+        <input id="add_user" type="button" value="Add User">
+      </form>
+    </div>
+    <div id="right_pane">
+    </div>
+  </body>
+</html>

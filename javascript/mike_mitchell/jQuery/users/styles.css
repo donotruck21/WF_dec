@@ -1,0 +1,26 @@
+table {
+  border-collapse: collapse;
+  margin: 20px 50px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+#users thead tr th {
+  padding-right: 20px;
+  border: 1px solid black;
+}
+#users tbody tr td {
+  padding-right: 20px;
+  border: 1px solid black;
+}
+input {
+  display: block;
+  margin-bottom: 10px;
+}
+
+#formArea {
+  display: inline-block;
+  background-color: #E8E8E8;
+  border-radius: 25px;
+  padding: 0px 20px;
+}

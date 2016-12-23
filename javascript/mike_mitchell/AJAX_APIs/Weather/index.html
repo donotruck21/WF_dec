@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="Current Weather" content="A basic weather site using jQuery/AJAX implementation">
+    <title>Current City Weather Temperatures</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script type="text/javascript">
+    function windDir(deg){
+      if (deg > 348.75 || deg <= 11.25){
+        windDirection = "North"
+      } else if (deg > 11.25 && deg <= 33.75){
+        windDirection = "North Northeast"
+      } else if (deg > 33.75 && deg <= 56.25){
+        windDirection = "Northeast"
+      } else if (deg > 56.25 && deg <= 78.75){
+        windDirection = "East Northeast"
+      } else if (deg > 78.75 && deg <= 101.25){
+        windDirection = "East"
+      } else if (deg > 101.25 && deg <= 123.75){
+        windDirection = "East Southeast"
+      } else if (deg > 123.75 && deg <= 146.25){
+        windDirection = "Southeast"
+      } else if (deg > 146.25 && deg <= 168.75){
+        windDirection = "South Southeast"
+      } else if (deg > 168.75 && deg <= 191.25){
+        windDirection = "South"
+      } else if (deg > 191.25 && deg <= 213.75){
+        windDirection = "South Southwest"
+      } else if (deg > 213.75 && deg <= 236.25){
+        windDirection = "Southwest"
+      } else if (deg > 236.25 && deg <= 258.75){
+        windDirection = "West Southwest"
+      } else if (deg > 258.75 && deg <= 281.25){
+        windDirection = "West"
+      } else if (deg > 281.25 && deg <= 303.75){
+        windDirection = "West Northwest"
+      } else if (deg > 303.75 && deg <= 326.25){
+        windDirection = "Northwest"
+      } else if (deg > 326.25 && deg <= 348.75){
+        windDirection = "North Northwest"
+      }
+      return windDirection;
+    }
+
+    $(document).ready(function(){
+      $('#btn').click(function(){
+        var city = $("#city").val();
+        $.get("http://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&APPID=8605d05ee34d72ccb4b362d1433bfaf1", function(res){
+          var currentWeather = "";
+          var currentTemp = res.main.temp;
+          //var currentTempF = 9/5 (currentTempK - 273) + 32;
+          currentWeather += "<h1>" + res.name + "</h1>";
+          for (var i = 0; i < res.weather.length; i++){
+            currentWeather += "<h2>" + res.weather[i].description + "</h2>"
+            currentWeather += "<img src='http://openweathermap.org/img/w/" + res.weather[i].icon + ".png'>"
+          }
+          currentWeather += "<p>Current Temperature: " + currentTemp + "&deg; F</p>"
+          currentWeather += "<p>Humidity: " + res.main.humidity + "% </p>"
+          var windDirection;
+          windDirection = windDir(res.wind.deg);
+          currentWeather += "<p>Wind: " + res.wind.speed + " MPH " + windDirection; + "</p>"
+          $('#weather_data').html(currentWeather);
+
+        }, "JSON")
+      return false;
+      })
+    })
+
+    </script>
+  </head>
+  <body>
+    <div id="wrapper">
+      <div id="weather_data">
+
+
+      </div>
+      <form>
+        <h2>Current Weather Forecast</h2>
+        <input id="city" type='text' name='city_name' placeholder="Enter City to Search Current Weather">
+        <input id="btn" type="submit" value="Search Weather">
+      </form>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+#wrapper {
+  width: 1000px;
+  height: 1000px;
+  margin: 0 auto;
+
+  }
+
+#pokemon {
+  display: inline-block;
+  vertical-align: top;
+  width: 1000px;
+}
+
+#pokemon img {
+  height: 100px;
+  width: 100px;
+}
+
+
+
+
+h1 {
+  color: blue;
+  text-align: center;
+}

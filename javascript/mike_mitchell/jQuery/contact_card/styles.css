@@ -1,0 +1,14 @@
+form input {
+  margin: 10px;
+  display: block;
+}
+textarea {
+  display: block;
+  margin: 10px;
+}
+
+#formArea {
+  width: 500px;
+  height: 700px;
+  display: inline-block;
+}

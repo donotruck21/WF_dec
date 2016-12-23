@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Users</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        $("#btn").click(function(){
+          var first_name = $("#first_name").val();
+          var last_name = $("#last_name").val();
+          var email = $("#email").val();
+          var phone = $("#phone").val();
+          $("#users tbody").append("<tr><td>" + first_name + "</td><td>" + last_name + "</td><td>" + email + "</td><td>" + phone + "</td>");
+          $("#btn").siblings().val("");
+          $( "tr:odd" ).css( "background-color", "#E5E5E5" );
+          $( "tr:even").css( "background-color", "#FFFFFF");
+          return false;
+        })
+      $(document).on
+      })
+    </script>
+  </head>
+  <body>
+    <div id="formArea">
+      <h2>Users</h2>
+      <h5>Enter a user's information and press the Add User button to add them to the table</h5>
+      <hr>
+      <form>
+        First Name: <input id="first_name" type="text" name="first_name">
+        Last Name: <input id="last_name" type="text" name="last_name">
+        Email Address: <input id="email" type="text" name="email">
+        Contact No.: <input id="phone" type="text" name="phone">
+        <input id="btn" type="submit" value="Add User">
+      </form>
+    </div>
+    <table id="users" >
+      <thead>
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Email Address</th>
+          <th>Contact #</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+  </body>
+</html>

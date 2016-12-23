@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="ninja to cat" content="basic jQuery practice that changes images when clicked on">
+  <title>Ninja to Cat</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $("img").click(function(){
+        var temp = $(this).attr("src")
+        $(this).attr("src", $(this).attr("data-alt-src"))
+        $(this).attr("data-alt-src", temp)
+        var tempAlt= $(this).attr("alt")
+        $(this).attr("alt", $(this).attr("swap-alt"))
+        $(this).attr("swap-alt", tempAlt)        
+      })
+    })
+  </script>
+</head>
+<body>
+  <div id="wrapper">
+    <img src="img/ninja0.png" alt="above ninja's head" data-alt-src="img/cat0.png" swap-alt="cat's ears">
+    <img src="img/ninja1.png" alt="top of ninja's head" data-alt-src="img/cat1.png" swap-alt="cat's eyes">
+    <img src="img/ninja2.png" alt="ninja's eyes" data-alt-src="img/cat2.png" swap-alt="cat's chin and body">
+    <img src="img/ninja3.png" alt="ninja's body and hands" data-alt-src="img/cat3.png" swap-alt="top of cat's legs">
+    <img src="img/ninja4.png" alt="ninja's feet" data-alt-src="img/cat4.png" swap-alt="cat's feet">
+  </div>
+</body>
+</html>

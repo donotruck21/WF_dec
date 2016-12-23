@@ -7,8 +7,6 @@
     <link rel="stylesheet" type="text/css" href="pokemon.css">
     <script type="text/javascript" src='http://code.jquery.com/jquery-1.10.2.min.js'></script>
     <script type="text/javascript">
-
-
       $(document).ready(function(){
         var url = "";
         for(var i = 1; i <= 151; i++) {
@@ -22,7 +20,18 @@
         }
       })
       $(document).on("click", "img", function(){
-      });
+          var entry;
+          var id = "#" + $(this).attr("id");
+          $.get("http://pokeapi.co/api/v1/pokemon/" + $(id).attr("id") + "/", function(res) {
+            entry = "<div id='logo'><img src='http://vignette3.wikia.nocookie.net/logopedia/images/e/e5/Pokemon_logo.png/revision/latest?cb=20120128115827' alt='logo'></div><h2>" + $(id).data("name") + "</h2>" + "<img src='" + $(id).attr("src") + "'>" + "<h4>Types:</h4><ul>";
+            for(var i = 0; i < $(id).data("entry.types.length"); i++) {
+              entry += "<li>" + $(id).data("entry.types[i].name") + "</li>";
+            }
+            entry += "</ul><h4>Height:</h4><p>" + $(id).data("entry.height") + "</p><h4>Weight:</h4><p>" + $(id).data("entry.weight") + "</p>";
+            $()
+            $("#pokedex").html(entry);
+          }, "json");
+        });
     </script>
   </head>
   <body>

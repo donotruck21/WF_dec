@@ -1,0 +1,46 @@
+<!--a project by Jeremy Gillmore and Mick Johnson -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Pokemon</title>
+    <link rel="stylesheet" type="text/css" href="pokemon.css">
+    <script type="text/javascript" src='http://code.jquery.com/jquery-1.10.2.min.js'></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        var url = "";
+        for(var i = 1; i <= 151; i++) {
+          (function (i){
+            $.get("http://pokeapi.co/api/v1/pokemon/"+i+"/", function(res) {
+              url = "<img id='" + i + "'  src='http://pokeapi.co/media/img/" + i + ".png'>";
+              $("#pokemon").append(url);
+              $("#"+i).data("entry", res);
+            })
+          })(i);
+        }
+      })
+      $(document).on("click", "img", function(){
+          var entry;
+          var dataEntry = $(this).data("entry")
+          console.log(dataEntry);
+          console.log(dataEntry.name);
+          var id = "#" + $(this).attr("id");
+          entry = "<div id='logo'><img src='http://vignette3.wikia.nocookie.net/logopedia/images/e/e5/Pokemon_logo.png/revision/latest?cb=20120128115827' alt='logo'></div><h2>" + dataEntry.name+ "</h2>" + "<img src='" + $(id).attr("src") + "'>" + "<h4>Types:</h4><ul>";
+          for(var i = 0; i < dataEntry.types.length; i++) {
+            entry += "<li>" + dataEntry.types[i].name + "</li>";
+          }
+          entry += "</ul><h4>Height:</h4><p>" + dataEntry.height + "</p><h4>Weight:</h4><p>" + dataEntry.weight + "</p>";
+          $("#pokedex").html(entry);
+        })
+    </script>
+  </head>
+  <body>
+    <div id="pokemon">
+    </div>
+    <div id="pokedex">
+      <div id="logo">
+        <img src='http://vignette3.wikia.nocookie.net/logopedia/images/e/e5/Pokemon_logo.png/revision/latest?cb=20120128115827' alt='logo'>
+      </div>
+    </div>
+  </body>
+</html>

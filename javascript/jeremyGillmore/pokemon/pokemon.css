@@ -44,3 +44,13 @@
   text-align:left;
   margin-left: 100px;
 }
+button{
+  margin: 10px;
+  padding: 5px 10px;
+}
+div{
+  display: inline-block;
+}
+#sidecont{
+  height:1000px;
+}

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <title>MineSweeper</title>
+      <link rel="stylesheet" type="text/css" href="style.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+   </head>
+   <body>
+     <script>
+     var mapHeight = 5;
+     var mapWidth = 5;
+      var map = [];
+      for (var i = 0; i < mapHeight; i++){
+        map[i]=[];
+      }
+      //initializes map
+      function initializeMap(){
+        for (var i = 0; i < mapHeight; i++){
+          for (var j = 0; j < mapWidth; j++){
+            map[i][j] = 0;
+          }
+        }
+      }
+      function incrementBlock(x,y){
+        //if checks to make sure the block is part of the map
+        if (x < mapHeight && y < mapWidth && x >= 0 && y >= 0){
+          if (map[x][y] != 10){
+            //if the block is not a bomb the number in the block is incremented by one
+            map[x][y]++;
+          }
+        }
+      }
+      function uncoverAll(x){
+        for(var i = 0; i <= x; i++){
+          if (i == 0 || i == 10){
+            if (i == 10){
+              $("."+i).css("background-color", "red")
+              $("."+i).html("<img src = 'images/bomb.jpg' alt = 'B'");
+            }
+            else{
+              $("."+i).css("background-color", "silver")
+            }
+          }
+          else{
+            $("."+i).html("<h3>"+$("."+i).attr("class")+"</h3>")
+            $("."+i).css("background-color", "silver")
+          }
+        }
+      }
+      function clearZeros(x,y){
+        x = Number(x);
+        y = Number(y);
+        if (x < mapHeight && x >= 0 && y < mapWidth && y >=0){
+          var id = "#"+x+"-"+y;
+          if ($(id).css("background-color") != "silver"){
+            $(id).css("background-color", "silver")
+            if ($(id).attr("class") == 0){
+              clearZeros(x+1,y+1);
+              clearZeros(x,y+1);
+              clearZeros(x-1,y+1);
+              clearZeros(x+1,y);
+              clearZeros(x-1,y);
+              clearZeros(x+1,y-1);
+              clearZeros(x,y-1);
+              clearZeros(x-1,y-1);
+            }
+          }
+        }
+      }
+      function generateMap(bombs){
+        initializeMap();
+        //random generation of bomb placements
+        while (bombs > 0){
+          var x = Math.trunc(Math.random()*mapHeight);
+          var y = Math.trunc(Math.random()*mapWidth);
+          if (map[x][y] != 10){
+            map[x][y] = 10; //if the block chosen isnt already a bomb set it to a bomb
+            //checks all boxes around the bomb to increment the number by one (if the adjacent block isnt a bomb itself)
+            incrementBlock(x+1,y+1);
+            incrementBlock(x,y+1);
+            incrementBlock(x-1,y+1);
+            incrementBlock(x+1,y);
+            incrementBlock(x-1,y);
+            incrementBlock(x+1,y-1);
+            incrementBlock(x,y-1);
+            incrementBlock(x-1,y-1);
+          }
+          else{
+            continue;//if the block is already a bomb start the loop over without subtracting a bomb
+          }
+          bombs--;
+        }
+      }//end function generateMap
+      function displayMap(){
+        var str = "";
+        for(var x = 0; x < mapHeight; x++){
+          for(var y = 0; y < mapWidth; y++){
+            //adds the html for each row to the string
+            str += "<div id = '"+x+"-"+y+"'class = '"+map[x][y]+"' idx = '"+x+"' idy = '"+y+"'><h3></h3></div>\n";
+          }
+          //adds html to start the new collumn to the string, the "\n" puts a new line character into the string so the page is easier to read when you use inspect element
+          str += "<br>\n"
+        }
+        $("#map").html(str);
+      }
+      $(document).on("click", "div",function(event){
+        if($(this).attr("class") != 10 && $(this).attr("class") != 0){
+          $(this).css("background-color", "silver")
+          $(this).html("<h3>"+$(this).attr("class")+"</h3>")
+        }
+        else if ($(this).attr("class") == 10){
+          $(this).css("background-color", "red")
+          $(this).html("<img src = 'images/bomb.jpg' alt = 'B'");
+          uncoverAll(10);
+        }
+        else {
+          console.log();
+          clearZeros($(this).attr("idx"),$(this).attr("idy"));
+          $(this).css("background-color", "silver")
+        }
+        event.stopPropagation(); //stops the click from effecting divs behind the one clicked on
+      })
+      $(document).on("rightclick", "div", function(event){
+        $(this).css("background-color", "red")
+        event.stopPropagation();
+      })//right click to flag the block;
+
+      initializeMap();//page loads and the map is initialized to 0 in all blocks
+     </script>
+     <div id = "map">
+     </div>
+   </body>
+</html>

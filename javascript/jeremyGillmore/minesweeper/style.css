@@ -1,0 +1,26 @@
+*{
+  padding: 0px;
+  margin: 0px;
+}
+body{
+  padding: 20px;
+}
+#map div{
+  margin: -1px -3px;
+  height: 26px;
+  width: 26px;
+  background-color: grey;
+  text-align: center;
+  border: 1px solid black;
+  display: inline-block;
+  vertical-align: middle;
+  line-height:26px;
+
+}
+#map {
+  display: inline;
+}
+#map img{
+  width: 25px;
+  height: 25px;
+}

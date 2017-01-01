@@ -3,7 +3,6 @@ body {
   background: -webkit-linear-gradient(left, #165E9E, #0AD1E3, #165E9E, #0AD1E3, #165E9E);
   background: -moz-linear-gradient(left, #165E9E, #0AD1E3);
   background: -o-linear-gradient(left, #165E9E, #0AD1E3);
-
 }
 
 
@@ -21,7 +20,20 @@ body {
   height: 100px;
   width: 100px;
   text-align: center;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 25px;
 }
+
+#weather_data h2 {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+#weather_data p {
+  font-weight: bold;
+}
+
 form {
   background-color: #202222;
   opacity: 0.8;

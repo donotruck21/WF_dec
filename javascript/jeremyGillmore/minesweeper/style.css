@@ -20,7 +20,8 @@ body{
 #map {
   display: inline;
 }
-#map img{
-  width: 25px;
-  height: 25px;
+img{
+  width: 35px;
+  height: 35px;
+  margin: -13px;
 }

@@ -7,8 +7,8 @@
    </head>
    <body>
      <script>
-     var mapHeight = 5;
-     var mapWidth = 5;
+     var mapHeight = 20;
+     var mapWidth = 38;
       var map = [];
       for (var i = 0; i < mapHeight; i++){
         map[i]=[];
@@ -35,7 +35,7 @@
           if (i == 0 || i == 10){
             if (i == 10){
               $("."+i).css("background-color", "red")
-              $("."+i).html("<img src = 'images/bomb.jpg' alt = 'B'");
+              $("."+i).html("<img src = 'images/bomb.png' alt = 'B'>");
             }
             else{
               $("."+i).css("background-color", "silver")
@@ -52,7 +52,7 @@
         y = Number(y);
         if (x < mapHeight && x >= 0 && y < mapWidth && y >=0){
           var id = "#"+x+"-"+y;
-          if ($(id).css("background-color") != "silver"){
+          if ($(id).css("background-color") != "rgb(192, 192, 192)"){
             $(id).css("background-color", "silver")
             if ($(id).attr("class") == 0){
               clearZeros(x+1,y+1);
@@ -63,6 +63,9 @@
               clearZeros(x+1,y-1);
               clearZeros(x,y-1);
               clearZeros(x-1,y-1);
+            }
+            else{
+              $(id).html("<h3>"+$(id).attr("class")+"</h3>")
             }
           }
         }
@@ -110,13 +113,13 @@
         }
         else if ($(this).attr("class") == 10){
           $(this).css("background-color", "red")
-          $(this).html("<img src = 'images/bomb.jpg' alt = 'B'");
+          $(this).html("<img src = 'images/bomb.png' alt = 'B'>");
           uncoverAll(10);
         }
         else {
-          console.log();
           clearZeros($(this).attr("idx"),$(this).attr("idy"));
           $(this).css("background-color", "silver")
+          // console.log($(this).css("background-color"))
         }
         event.stopPropagation(); //stops the click from effecting divs behind the one clicked on
       })

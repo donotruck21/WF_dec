@@ -1,0 +1,59 @@
+<!--a project by Jeremy Gillmore and Mick Johnson -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Pokemon 2</title>
+    <link rel="stylesheet" type="text/css" href="pokemon.css">
+    <script type="text/javascript" src='http://code.jquery.com/jquery-1.10.2.min.js'></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        var url;
+        for(var i = 1; i <= 151; i++) {
+          url = "<img id='" + i + "'  src='http://pokeapi.co/media/img/" + i + ".png'>";
+          $("#pokemon").append(url);
+
+          $("img").click(function(){
+            var entry;
+            var id = "#" + $(this).attr("id");
+            $.get("http://pokeapi.co/api/v1/pokemon/" + $(id).attr("id") + "/", function(res) {
+              entry = "<div id='logo'><img src='http://vignette3.wikia.nocookie.net/logopedia/images/e/e5/Pokemon_logo.png/revision/latest?cb=20120128115827' alt='logo'></div><h2>" + res.name + "</h2>" + "<img id='poke_img' data-ID='" + $(id).attr("id") + "' src='" + $(id).attr("src") + "'>" + "<h4>Types:</h4><ul>";
+              for(var i = 0; i < res.types.length; i++) {
+                entry += "<li>" + res.types[i].name + "</li>";
+              }
+              entry += "</ul><h4>Height:</h4><p>" + res.height + "</p><h4>Weight:</h4><p>" + res.weight + "</p>";
+              $()
+
+              $("#pokedex").html(entry);
+            }, "json");
+        });
+      }
+      });
+
+      $(document).on("click", "#poke_img", function(){
+      var url;
+      $.get("http://pokeapi.co/api/v1/pokemon/" + $(this).attr("data-ID") + "/", function(res){
+        if (res.evolutions.length > 0) {
+          var evoNum = "http://pokeapi.co/api/v1/pokemon/" + res.evolutions[0].to.toLowerCase() + "/"
+          $.get(evoNum, function(res){
+            url = "http://pokeapi.co/media/img/" + res.national_id + ".png";
+            console.log(url);
+            $("#poke_img").attr("src", url);
+            $("#poke_img").attr("data-ID", res.national_id);
+            }, "json");
+          }
+      }, "json");
+    });
+
+    </script>
+  </head>
+  <body>
+    <div id="pokemon">
+    </div>
+    <div id="pokedex">
+      <div id="logo">
+        <img src='http://vignette3.wikia.nocookie.net/logopedia/images/e/e5/Pokemon_logo.png/revision/latest?cb=20120128115827' alt='logo'>
+      </div>
+    </div>
+  </body>
+</html>

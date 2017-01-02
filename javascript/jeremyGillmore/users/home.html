@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <title>jQuery practice</title>
+      <link rel="stylesheet" type="text/css" href="style.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+   </head>
+   <body>
+     <script>
+       $(document).ready(function(){
+         $("#submitBtn").click(function(){
+           $("#addHere").append("<tr><td>"+$("#fn").val()+"</td><td>"+$("#ln").val()+"</td><td>"+$("#em").val()+"</td><td>"+$("#pn").val()+"</td></tr>");
+           $("#pn").val("");
+           $("#ln").val("");
+           $("#fn").val("");
+           $("#em").val("");
+         })
+       })
+     </script>
+     <table>
+       <th>
+         <tr>
+          <td>First Name</td><td>Last Name</td><td>Email Address</td><td>Contact #</td>
+        </tr>
+       </th>
+       <tbody id = "addHere">
+       </tbody>
+     </table>
+     <div>
+       <h1>Add User</h1>
+       <div id="userInfo">
+         <form>
+           First Name: <input id = "fn" type="text" name="firstName" placeholder = "First Name"><br>
+           Last Name: <input id = "ln" type="text" name="lastName" placeholder="Last Name"><br>
+           Email Address: <input id = "em" type="text" name="email" placeholder="Email Adress"><br>
+           Contact No: <input id = "pn" type="text" name="phoneNum" placeholder="Phone #"><br>
+         </form>
+         <button id="submitBtn">Add User</button><br>
+       </div>
+     </div>
+   </body>
+</html>

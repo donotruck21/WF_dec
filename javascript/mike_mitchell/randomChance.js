@@ -11,7 +11,7 @@ var quarters = numQuarters
       quarters += winnings
       console.log("You now have " + quarters + " quarters!");
       if (quarters > leaveAt) {
-        return "You are leaving with " + quarters + " quarters!";
+        return quarters;
       } else {
         console.log("Let's keep playing until we get to " + leaveAt + " quarters!");
       }

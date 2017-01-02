@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="disappearing ninja" content="basic jquery exercise">
+    <title>Disappearing Ninja</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script>
+    $(document).ready(function(){
+      $("div img").click(function(){
+        $(this).hide()
+      })
+      $("button").click(function(){
+        $("img").show()
+      })
+    })
+    </script>
+  </head>
+  <body>
+  <div id="wrapper">
+    <div class="ninja">
+      <img src="images/ninja.jpg" alt="a ninja doing a high kick">
+    </div>
+    <div class="ninja">
+      <img src="images/ninja.jpg" alt="a ninja doing a high kick">
+    </div>
+    <div class="ninja">
+      <img src="images/ninja.jpg" alt="a ninja doing a high kick">
+    </div>
+    <div class="ninja">
+      <img src="images/ninja.jpg" alt="a ninja doing a high kick">
+    </div>
+    <div class="ninja">
+      <img src="images/ninja.jpg" alt="a ninja doing a high kick">
+    </div>
+    <div class="ninja">
+      <img src="images/ninja.jpg" alt="a ninja doing a high kick">
+    </div>
+    <div class="ninja">
+      <img src="images/ninja.jpg" alt="a ninja doing a high kick">
+    </div>
+    <div class="ninja">
+      <img src="images/ninja.jpg" alt="a ninja doing a high kick">
+    </div>
+    <button>Click to Restore All Ninjas</button>
+  </div><!-- end wrapper -->
+  </body>
+</html>

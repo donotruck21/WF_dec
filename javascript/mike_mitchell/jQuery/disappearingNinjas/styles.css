@@ -1,0 +1,26 @@
+#wrapper {
+  width: 900px;
+  height: 1000px;
+  margin: 0 auto;
+  background: repeating-linear-gradient(-45deg, black, black 5px, gray 5px, gray 6px);
+  background: -webkit-repeating-linear-gradient(-45deg, black, black 5px, gray 5px, gray 6px);
+  background: -moz-repeating-linear-gradient(-45deg, black, black 2px, gray 2px, gray 4px);
+  background: -o-repeating-linear-gradient(-45deg, black, black 2px, gray 2px, gray 4px);
+  display: block;
+}
+
+div {
+  margin: 25px 36px;
+  width: 150px;
+  height: 172px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+div img {
+  width: 150px;
+}
+
+button {
+  margin-left: 365px;
+}

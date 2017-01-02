@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <title>DOJO</title>
+      <link rel="stylesheet" type="text/css" href="style.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+   </head>
+   <body>
+     <script>
+       $(document).ready(function(){
+         $("input").hover(function(){
+           $("#stage").css("background-image", "url('images/"+$(this).val()+".jpg')")
+         },function(){
+           $("#stage").css("background-image", "")
+         })
+         $("input").click(function(){
+           $("#stage").css("background-image", "url('images/"+$(this).val()+".jpg')")
+           $("#chooseBG").html("<h1>Select Fighters</h1><select id = 'player1'><option>Leo</option><option>Mike</option><option>Donny</option><option>Ralph<option></select><select id = 'player2'><option>Leo</option><option>Mike</option><option>Donny</option><option>Ralph<option></select><input type = 'button' value = 'Set Characters' id = 'setCharacters'>")
+           $(".character").css("visibility" , "visible")
+         })
+       })
+       $(document).on("click", "#setCharacters", function(){
+         $("#chooseBG").hide();
+         $(".character").css("margin", "240px 173px")
+       })
+       $(document).on("click", "#player1", function(){
+         $("#player1Character img").attr("src", "images/"+$(this).val()+".png")
+       })
+       $(document).on("click", "#player2", function(){
+         $("#player2Character img").attr("src", "images/"+$(this).val()+".png")
+       })
+     </script>
+     <div id = "stage">
+       <div id = "chooseBG">
+         <h1>Select Arena</h1>
+         <input type = "button" value = "Beach">
+         <input type = "button" value = "Dojo">
+         <input type = "button" value = "Earth"><br>
+         <input type = "button" value = "Forest">
+         <input type = "button" value = "Matrix">
+         <input type = "button" value = "Snow">
+       </div>
+       <div id = "player1Character" class = "character">
+         <img src = "images/Leo.png">
+       </div>
+       <div id = "player2Character" class = "character">
+         <img src = "images/Leo.png">
+       </div>
+     </div>
+   </body>
+</html>

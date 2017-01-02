@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Hover Cats</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script>
+      function swapImg(){
+        var temp = $(this).attr("src")
+        $(this).attr("src", $(this).attr("data-alt-src"))
+        $(this).attr("data-alt-src",temp)
+        var tempAlt= $(this).attr("alt")
+        $(this).attr("alt",$(this).attr("swap-alt"))
+        $(this).attr("swap-alt", tempAlt)
+      };
+
+
+      $(document).ready(function(){
+        $(function(){
+          $("img").hover(swapImg, swapImg);
+        });
+      /*  var swapSrc = function (){          Functionality for using .data() rather than .attr()
+          var $this = $(this);
+          var newSrc = $this.data("alt-src");
+          $this.data("alt-src", $this.attr("src"));
+          $this.attr("src", newSrc);
+        }
+
+          $(function() {
+            $('img[data-alt-src]').each(function() {
+              new Image().src = $(this).data('alt-src');
+            }).hover(swapSrc, swapSrc);
+          });*/
+      });
+
+    </script>
+  </head>
+  <body>
+    <div id="wrapper">
+      <h1>Hover over a cat to see where it ends up!</h1>
+      <img src=images/cat1_1.jpg alt="a gray cat" data-alt-src="images/cat2_1.jpg" swap-alt="a gray cat in a bowl ">
+      <img src=images/cat1_2.jpg alt="a white/brown/gray kitten" data-alt-src="images/cat2_2.jpg" swap-alt="a white/brown/gray kitten in a wine glass ">
+      <img src=images/cat1_3.jpg alt="a white cat" data-alt-src="images/cat2_3.jpg" swap-alt="a white cat in a bowl">
+      <img src=images/cat1_4.jpg alt="a white and brown cat" data-alt-src="images/cat2_4.jpg" swap-alt="a white and brown cat in a bowl">
+    </div>
+  </body>
+</html>

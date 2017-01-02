@@ -8,38 +8,43 @@
    <body>
      <script>
      $(document).ready(function(){
-       $(".happy img").click(function(){
+       $("img").click(function(){
          $(this).fadeOut();
        });
        $("#resetBtn").click(function(){
-         $(".happy img").slideDown();
+         $("img").slideDown();
        });
+       $("img").hover(function(){
+         var temp = $(this).attr("src");
+         $(this).attr("src", $(this).attr("alt-src"));
+         $(this).attr("alt-src", temp);
+       })
      })
      </script>
      <div id = "wrapper">
        <div class="happy">
-         <img src = "images/happy.jpg">
+         <img src = "images/happy.jpg" alt-src = "images/sad.png">
        </div>
        <div class="happy">
-         <img src = "images/happy.jpg">
+         <img src = "images/happy.jpg" alt-src = "images/sad.png">
        </div>
        <div class="happy">
-         <img src = "images/happy.jpg">
+         <img src = "images/happy.jpg" alt-src = "images/sad.png">
        </div>
        <div class="happy">
-         <img src = "images/happy.jpg">
+         <img src = "images/happy.jpg" alt-src = "images/sad.png">
        </div>
        <div class="happy">
-         <img src = "images/happy.jpg">
+         <img src = "images/happy.jpg" alt-src = "images/sad.png">
        </div>
        <div class="happy">
-         <img src = "images/happy.jpg">
+         <img src = "images/happy.jpg" alt-src = "images/sad.png">
        </div>
        <div class="happy">
-         <img src = "images/happy.jpg">
+         <img src = "images/happy.jpg" alt-src = "images/sad.png">
        </div>
        <div class="happy">
-         <img src = "images/happy.jpg">
+         <img src = "images/happy.jpg" alt-src = "images/sad.png">
        </div>
        <div id = "footer">
          <button id = "resetBtn">RESET</button>

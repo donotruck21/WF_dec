@@ -1,0 +1,42 @@
+.container{
+  position: absolute;
+  min-width: 100%;
+  min-height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+h1{
+  text-align: center;
+  padding-top: 60px;
+}
+img{
+  height: 100% !important;
+  width: 100%;
+  margin-top: 10px;
+}
+.houseDiv{
+  text-align: center;
+}
+.infoDiv{
+  margin-top: 40px;
+  border: 2px solid black;
+  padding-top: 20px;
+  border-radius: 15px;
+  height: 350px;
+  width: 250px;
+  text-align: center;
+  border-radius: 50px;
+  margin-left: 25% !important;
+}
+.infoDiv h4{
+  display: inline-block;;
+}
+.col-xs-12{
+  text-align: center;
+}
+#bg{
+  position: absolute;
+  min-height: 100%;
+  opacity: .2;
+  min-width: 100%;
+}

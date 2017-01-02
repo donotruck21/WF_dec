@@ -6,11 +6,12 @@
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
    </head>
    <body>
+     <h1>MineSweeper</h1>
      <div id = "map">
      </div>
      <script>
      var mapHeight = 20;
-     var mapWidth = 38;
+     var mapWidth = 40;
       var map = [];
       for (var i = 0; i < mapHeight; i++){
         map[i]=[];
@@ -56,6 +57,7 @@
           var id = "#"+x+"-"+y;
           if ($(id).css("background-color") != "rgb(192, 192, 192)"){
             $(id).css("background-color", "silver")
+            $(id).html("")
             if ($(id).attr("class") == 0){
               clearZeros(x+1,y+1);
               clearZeros(x,y+1);
@@ -113,16 +115,22 @@
         document.oncontextmenu = function() {
           return false;
         };
+        $("body").css("width", mapWidth*26 + "px")//sets body of html to the width of the map generated
       })
       $(document).on("mousedown", "div", function(event){
-        if( event.button == 2 ) {
-          $(this).css("background-color", "grey")
+        if( event.button == 2 && $(this).css("background-color") != "rgb(192, 192, 192)") {
           $(this).html("<img class = 'flag' src = 'images/flag.png' alt = 'F'>");
           return false;
         }
         return true;
       })
       $(document).on("click", "div",function(event){
+        event.stopPropagation(); //stops the click from effecting divs behind the one clicked on
+        //if tile is flagged then unflag it and do nothing else
+        if($(this).html() == '<img class="flag" src="images/flag.png" alt="F">'){
+          $(this).html("");
+          return;
+        }
         //if not a bomb and not an empty square, uncover tile and put its number on it
         if($(this).attr("class") != 10 && $(this).attr("class") != 0){
           $(this).css("background-color", "silver")
@@ -137,21 +145,13 @@
         else {
           //if tile is empty (no number or bomb) clear all the tiles around it
           clearZeros($(this).attr("idx"),$(this).attr("idy")); //passes the x and y corrdinates of the tile clicked into the clear function
-          $(this).css("background-color", "silver")
+          $(this).css("background-color", "silver");
+          $(this).html("");
         }
-        event.stopPropagation(); //stops the click from effecting divs behind the one clicked on
       })
-      $(document).on("rightclick", "div", function(event){
-        $(this).css("background-color", "red")
-        event.stopPropagation();
-      })//right click to flag the block;
-
       initializeMap();//page loads and the map is initialized to 0 in all blocks
-      console.log("initialized");
       generateMap(100);
-      console.log("generated");
       displayMap();
-      console.log("displayed");
      </script>
    </body>
 </html>

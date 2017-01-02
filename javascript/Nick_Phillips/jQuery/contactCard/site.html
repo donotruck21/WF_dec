@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Form Into Table</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" charset="utf-8"></script>
+    <script src="site.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="formDiv col-xs-12 col-sm-5">
+        <h1>Who are you?</h1>
+        <form class="form-horizontal">
+          <div class="form-group">
+            <label class="control-label col-xs-12 col-sm-5">First Name:</label>
+            <div class="col-xs-12 col-sm-8">
+              <input id='name' class="form-control" type="text" name="first_name">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-xs-12 col-sm-5">Last Name:</label>
+            <div class="col-xs-12 col-sm-8">
+              <input class="form-control" type="text" name="last_name">
+            </div>
+          </div>
+          <label>About Me:</label><br>
+          <textarea class="form-control" name="description"></textarea>
+          <button id="submit" class="btn btn-default">Add User</button>
+        </form>
+      </div>
+      <div class="cardDiv col-xs-12 col-sm-7">
+        <h1>Our Users</h1>
+      </div>
+    </div>
+  </body>
+</html>

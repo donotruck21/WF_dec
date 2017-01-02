@@ -1,0 +1,16 @@
+.submit{
+  text-align: right;
+}
+.container{
+  margin:30px 0px;
+}
+td{
+  vertical-align: middle !important;
+}
+h1{
+  text-align: center;
+  margin-bottom: 30px !important;
+}
+input:-webkit-autofill {
+    color: #fff !important;
+}

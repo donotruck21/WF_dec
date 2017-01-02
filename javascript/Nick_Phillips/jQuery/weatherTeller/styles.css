@@ -1,0 +1,18 @@
+div{
+  text-align: center;
+}
+.container{
+  position: absolute;
+  min-height: 100%;
+  min-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media and screen (min-width: 770px){
+  .container {
+    display: none;
+    margin-top: 40%;
+  }
+}

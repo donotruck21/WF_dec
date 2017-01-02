@@ -6,6 +6,8 @@
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
    </head>
    <body>
+     <div id = "map">
+     </div>
      <script>
      var mapHeight = 20;
      var mapWidth = 38;
@@ -106,20 +108,36 @@
         }
         $("#map").html(str);
       }
+      //stops the right click menu from apearing
+      $(document).ready(function(){
+        document.oncontextmenu = function() {
+          return false;
+        };
+      })
+      $(document).on("mousedown", "div", function(event){
+        if( event.button == 2 ) {
+          $(this).css("background-color", "grey")
+          $(this).html("<img class = 'flag' src = 'images/flag.png' alt = 'F'>");
+          return false;
+        }
+        return true;
+      })
       $(document).on("click", "div",function(event){
+        //if not a bomb and not an empty square, uncover tile and put its number on it
         if($(this).attr("class") != 10 && $(this).attr("class") != 0){
           $(this).css("background-color", "silver")
           $(this).html("<h3>"+$(this).attr("class")+"</h3>")
         }
+        //if tile is a bomb uncover tile with red background and bomb image then uncover all tiles
         else if ($(this).attr("class") == 10){
           $(this).css("background-color", "red")
           $(this).html("<img src = 'images/bomb.png' alt = 'B'>");
-          uncoverAll(10);
+          uncoverAll(10);//uncovers all tiles when passed an argument of 10
         }
         else {
-          clearZeros($(this).attr("idx"),$(this).attr("idy"));
+          //if tile is empty (no number or bomb) clear all the tiles around it
+          clearZeros($(this).attr("idx"),$(this).attr("idy")); //passes the x and y corrdinates of the tile clicked into the clear function
           $(this).css("background-color", "silver")
-          // console.log($(this).css("background-color"))
         }
         event.stopPropagation(); //stops the click from effecting divs behind the one clicked on
       })
@@ -129,8 +147,11 @@
       })//right click to flag the block;
 
       initializeMap();//page loads and the map is initialized to 0 in all blocks
+      console.log("initialized");
+      generateMap(100);
+      console.log("generated");
+      displayMap();
+      console.log("displayed");
      </script>
-     <div id = "map">
-     </div>
    </body>
 </html>

@@ -20,7 +20,16 @@ body{
 #map {
   display: inline;
 }
-#map img{
-  width: 25px;
-  height: 25px;
+img{
+  width: 35px;
+  height: 35px;
+  margin: -13px;
+}
+.flag{
+  width:25px;
+  height:25px;
+  margin:0px;
+}
+h1{
+  margin: 0px 0px 20px 100px;
 }

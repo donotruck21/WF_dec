@@ -1,0 +1,19 @@
+body {
+  width: 1280px;
+  height: 720px;
+
+  background-image: url('img/dojo.jpg');
+  background-repeat: no-repeat;
+}
+
+#wrapper{
+  width: 1280px;
+  height: 520px;
+  margin: 200px auto;
+
+}
+
+img {
+  margin: 10px 540px;
+  display: block;
+}

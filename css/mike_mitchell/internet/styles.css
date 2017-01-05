@@ -1,0 +1,284 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Helvetica;
+}
+
+#wrapper {
+  width: 970px;
+  margin: 0 auto;
+}
+
+#header {
+  position: relative;
+}
+
+#header img {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+}
+
+#header h1 {
+  color: #474747;
+  display: inline-block;
+  font-size: 40px;
+  font-weight: lighter;
+  height: 60px;
+  padding: 22px 0px 0px 100px;
+
+}
+
+.blueText {
+  color: #22659E;
+}
+
+.redText {
+  color: #D9231C;
+}
+
+#header h2 {
+  color: white;
+  background: linear-gradient(#25669E, #5283AC, #25669E);
+  background: -webkit-linear-gradient(#25669E, #5283AC, #25669E);
+  background: -o-linear-gradient(#25669E, #5283AC, #25669E);
+  background: -moz-linear-gradient(#25669E, #5283AC, #25669E);
+  padding-left: 20px;
+  line-height: 45px;
+  font-size: 26px;
+  font-weight: lighter;
+}
+
+#contentGradient {
+  width: 970px;
+  height: 200px;
+  background: linear-gradient(#E3E3E3, #FFFFFF);
+  background: -webkit-linear-gradient(#E3E3E3, #FFFFFF);
+  background: -o-linear-gradient(#E3E3E3, #FFFFFF);
+  background: -moz-linear-gradient(#E3E3E3, #FFFFFF);
+}
+
+#sidebar {
+  width: 200px;
+  height: 490px;
+  display: inline-block;
+  vertical-align: top;
+
+}
+#topSidebar {
+  width: 180px;
+  height: 165px;
+  border-bottom: 1px solid gray;
+  margin-right: 15px;
+  padding-top: 25px;
+  margin-left: 5px;
+}
+
+
+#topSidebar p {
+  font-size: 11px;
+  font-weight: bold;
+  margin: 10px 0px;
+}
+
+.sidebarBtn {
+  width: 175px;
+  height: 35px;
+  margin: 0px 0px 5px 2px;
+  color: #FFFFFF;
+  font-size: 13px;
+  border-radius: 5px;
+  border: 0px;
+  box-shadow: 2px 2px 2px 0px gray;
+}
+
+#watch {
+  background-color: #4782B3;
+}
+#resources {
+  background-color: #ED9427;
+}
+
+#bottomSidebar {
+  background-image: url('images/ad_background.png');
+  width: 180px;
+  height: 265px;
+  margin: 20px 0px 0px 5px;
+  text-align: center;
+  padding-top: 1px;
+  display: inline-block;
+}
+
+#bottomSidebar h3 {
+  color: #FFFFFF;
+  margin: 15px 10px 10px 10px;
+  font-weight: lighter;
+}
+
+#bottomSidebar img {
+  width: 80px;
+}
+
+#learnMore {
+  width: 160px;
+  height: 30px;
+  margin: 10px 10px 15px;
+  color: #FFFFFF;
+  font-size: 13px;
+  font-weight: bold;
+  border-radius: 5px;
+  background-color: #34C8DF;
+  border: 0px;
+  box-shadow: 2px 2px 2px 0px black;
+}
+
+#arrows {
+  font-size: 11px;
+  margin-bottom: 2px;
+}
+
+#grayArrow {
+  color: #DDDDDD;
+}
+
+#whiterArrow {
+  color: #EEEEEE;
+}
+
+#contentArea {
+  width: 700px;
+  display: inline-block;
+}
+#contentHeader {
+  border-bottom: 1px solid gray;
+  height: 60px;
+  width: 735px;
+  display: inline-block;
+  vertical-align: top;
+  margin: 0px 15px 10px;
+
+}
+#leftContentHeader {
+  height: 50px;
+  width: 460px;
+  display: inline-block;
+  vertical-align: top;
+  padding-top: 10px;
+}
+
+#leftContentHeader img {
+  height: 15px;
+}
+
+#rightContentHeader {
+  height: 60px;
+  width: 270px;
+  display: inline-block;
+  vertical-align: top;
+  text-align: right;
+  color: gray;
+}
+
+#rightContentHeader img {
+  height: 35px;
+  padding: 10px;
+}
+
+#rightContentHeader p {
+  display: inline-block;
+  width: 153px;
+  font-size: 10px;
+  vertical-align: top;
+  text-align: right;
+}
+
+#phoneNumber {
+  color: #00C0DF;
+  font-size: 25px;
+  font-weight: bolder;
+}
+
+#mainContent {
+  display: inline-block;
+  vertical-align: top;
+  width: 735px;
+  height: 700px;
+  margin: 0px 15px;
+}
+
+#mainContent img {
+  width: 275px;
+  text-align: center;
+  margin: 10px 245px;
+}
+
+#mainContent h3 {
+  color: #22659E;
+}
+
+#mainContent p {
+  margin-top: 5px;
+  font-size: 14px;
+}
+
+#mainContent ul {
+  margin-top: 5px;
+  margin-left: 40px;
+}
+
+#mainContent ul li {
+  margin-top: 5px;
+  font-size: 14px;
+}
+
+#mainContent ol {
+  margin-top: 5px;
+  margin-left: 40px;
+}
+
+#mainContent ol li {
+  margin-top: 5px;
+  font-size: 14px;
+}
+
+#bottomMain img {
+  width: 100px;
+  margin: 15px;
+  display: inline-block;
+}
+
+#bottomMain a {
+  text-decoration: none;
+}
+
+#bottomMainLeft {
+  display: inline-block;
+}
+
+#bottomMainRight {
+  display: inline-block;
+  width: 540px;
+  vertical-align: top;
+  margin: 15px 10px 15px 0px;
+}
+
+#bottomMain {
+  margin: 15px auto;
+  border: 5px solid blue;
+  display: inline-block;
+  width: 705px;
+  box-shadow: 2px 2px 2px 0px gray;
+
+}
+
+.lightBlueText {
+  color: #0799B0;
+}
+
+.bolded {
+  font-weight: bold;
+}
+
+.italic {
+  font-style: italic;
+}

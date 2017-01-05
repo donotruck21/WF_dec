@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sortable Ninja</title>
+    <style>
+      ul{
+        padding-left: 0px;
+      }
+      ul li{
+        list-style: none;
+        margin: 0px;
+      }
+      .wrapper{
+        text-align: center;
+      }
+    </style>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+    $( function() {
+      $( "#sortable" ).sortable();
+      $( "#sortable" ).disableSelection();
+    } );
+    </script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <h2>Sort this ninja!</h2>
+      <ul id="sortable">
+        <li class="ui-state-default"><img src="sorting_images/sort1.png" alt="Ninja Pic 1"></li>
+        <li class="ui-state-default"><img src="sorting_images/sort2.png" alt="Ninja Pic 2"></li>
+        <li class="ui-state-default"><img src="sorting_images/sort3.png" alt="Ninja Pic 3"></li>
+        <li class="ui-state-default"><img src="sorting_images/sort4.png" alt="Ninja Pic 4"></li>
+        <li class="ui-state-default"><img src="sorting_images/sort5.png" alt="Ninja Pic 5"></li>
+      </ul>
+    </div>
+  </body>
+</html>

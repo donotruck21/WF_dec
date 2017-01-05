@@ -1,0 +1,40 @@
+img{
+  height: 350px !important;
+  width: 350px;
+  margin: 10px 0px;
+}
+div{
+  text-align: center;
+  position: relative;
+}
+h1, h5{
+  text-align: center;
+  position: relative;
+}
+
+#bg{
+  position: absolute;
+  left: 0;
+  top: 0;
+  min-width: 100%;
+  min-height: 100%;
+  opacity: .19;
+  margin: 0px;
+}
+
+.container {
+    position: absolute;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+@media screen and (max-width:800px){
+  #bg{
+    display: none;
+  }
+  .container{
+    background: rgba(0, 0, 0, 0.75);
+    padding: 50px 0px;
+    color: white;
+  }
+}

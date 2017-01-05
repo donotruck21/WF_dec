@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Form Validator</title>
+    <link rel="stylesheet" href="jquery-ui.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+      function clearErrors(){
+        $.each($('input'), function(i, val){
+          $(val).css({'border-width': '2px', 'border-style': 'inset', 'border-color': 'initial', 'border-image': 'initial'});
+          $(val).siblings('span').text('');
+        })
+      }
+
+      function fieldsValid(){
+        var valid = true;
+        $.each($('input'), function(i, val){
+          if(!$(val).val()){
+            $(val).css('border', '1px solid red');
+            $(val).siblings('span').text('Please fill in this field.');
+            valid = false;
+          }
+        })
+        return valid;
+      }
+
+      function displayConfirmation(){
+        var html = "<p>Thanks " +
+                    $('#name').val() +
+                    "! Your cruise leaves on " +
+                    $('#from').val() +
+                    " and returns on the " +
+                    $('#to').val() + ".</p>";
+        $( "#dialog" ).html(html).dialog();
+      }
+
+      $(function() {
+        var today = new Date();
+        $( "#from" ).datepicker({ minDate: 0});
+        $( "#to" ).datepicker({ minDate: 0});
+        $( "#from" ).on('change', function(){
+          var fromDate = new Date($( "#from" ).val());
+          var timeDiff = Math.abs(fromDate.getTime() - today.getTime());
+          var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
+          $( "#to" ).datepicker("option", "minDate", diffDays + 1);
+        })
+        $('form').on('submit', function(e){
+          e.preventDefault();
+          clearErrors();
+          if(fieldsValid()){
+            displayConfirmation();
+          }
+        })
+      });
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <form>
+        <h1>You have won a cruise!</h1>
+        <div class="form-group">
+          <label for="from" class="col-xs-2 col-form-label">From:</label>
+          <div class="col-xs-10">
+            <input type="text" id="from" class="datepicker form-control">
+            <span id="fromSpan"></span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="to" class="col-xs-2 col-form-label">To:</label>
+          <div class="col-xs-10">
+            <input type="text" id="to" class="datepicker form-control">
+            <span id="toSpan"></span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="name" class="col-xs-2 col-form-label">Name</label>
+          <div class="col-xs-10">
+            <input type="text" id="name" class="datepicker form-control">
+            <span id="nameSpan"></span>
+          </div>
+        </div>
+        <button class="btn btn-success" type="submit">Submit</button>
+      </form>
+      <div id="dialog" title="Cruise Booked!"></div>
+    </div>
+  </body>
+</html>

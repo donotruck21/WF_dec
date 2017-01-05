@@ -1,0 +1,25 @@
+img{
+  height: 350px !important;
+  width: 350px;
+  margin: 10px 0px;
+}
+div{
+  text-align: center;
+  position: relative;
+}
+h1, h5, h3{
+  text-align: center;
+}
+.container{
+  padding: 20px 0px;
+}
+body {
+  background-size: cover;
+  background: url('img/background.jpg');
+}
+@media screen and (max-width:500px){
+  img{
+    height: 250px !important;
+    width:  250px !important;
+  }
+}

@@ -1,0 +1,27 @@
+button{
+  width: 100%;
+  margin-top: 10px !important;
+}
+.container{
+  margin:30px 0px;
+}
+td{
+  vertical-align: middle !important;
+}
+h1{
+  text-align: center;
+  margin-bottom: 30px !important;
+}
+input:-webkit-autofill {
+    color: #fff !important;
+}
+label{
+  text-align: left !important;
+}
+.card{
+  border: 1px solid black;
+  height: 90px;
+  width: 180px;
+  text-align: center;
+  margin-top: 5px;
+}

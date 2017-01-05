@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Contact Card Maker</title>
+    <link rel="stylesheet" type="text/css" href="contact_card.css">
+    <script type="text/javascript" src='http://code.jquery.com/jquery-1.10.2.min.js'></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+
+        $("#add_user").click(function(){
+          var addition = '<div class="card" data-descr="<p>' + $("textarea[name='description']").val() + '</p>"><h2>' + $("input[name='first_name']").val() + " " + $("input[name='last_name']").val() +
+          "</h2><p>Click for description!</p></div>";
+          $("#cards").append(addition);
+          $("input[name='first_name']").val("");
+          $("input[name='last_name']").val("")
+          $("textarea[name='description']").val("");
+        });
+      });
+
+      $(document).on("click",".card", function(){
+        var temp = ($(this).attr("data-descr"));
+        $(this).attr("data-descr", $(this).html());
+        $(this).html(temp);
+
+
+      });
+    </script>
+  </head>
+  <body>
+    <h1>Contact Card Maker</h1>
+    <div id="form">
+      <form action="#" method="post" id="add_user_form">
+        <label>
+          First Name: <input type="text" name="first_name">
+        </label>
+        <label>
+          Last Name: <input type="text" name="last_name">
+        </label>
+      </form>
+      <p>Description:</p>
+      <textarea name="description" form="add_user_form" placeholder="Enter description:"></textarea>
+      <button id="add_user" type="button" name="add_user">Add User</button>
+    </div>
+    <div id="cards">
+      <!-- <div class="card" data-descr="HELLO WORLDDD">
+        <h2>Mick Johnson</h2>
+        <p>Click for description!</p>
+      </div> -->
+    </div>
+  </body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Other jQuery Libraries</title>
+      <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script type="text/javascript" src="../skrollr/skrollr/dist/skrollr.min.js"></script>
+    <script src="../FitVids.js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="../jquery.avgrund.js/jquery.avgrund.js"></script>
+    <link rel="stylesheet" href="../jquery.avgrund.js/style/avgrund.css">
+	  <script type="text/javascript">
+    $(document).ready(function(){
+      var s = skrollr.init();
+       $(document).fitVids();
+       $('button').avgrund({
+         width: 380,
+        height: 280,
+        showClose: true,
+        showCloseText: 'close',
+        closeByEscape: true,
+        closeByDocument: true,
+        enableStackAnimation: false,
+        openOnEvent: true,
+        setEvent: 'click',
+        template: 'I used Avgrund for a cool dialog box effect'
+       });
+    });
+	  </script>
+  </head>
+  <body>
+    <h1>Trying some other jquery libraries and plugins</h1>
+    <button type="button">Press Me!</button>
+    <p>Responsive video sizing via FitVids. Try resizing the window.</p>
+    <iframe width="187" height="105" src="https://www.youtube.com/embed/7X8II6J-6mU" frameborder="0" allowfullscreen></iframe>
+    <div data-0="background-color:rgb(255,255,255);color:rgb(0,0,0);" data-top="background-color:rgb(0,0,0);color:rgb(255,255,255);"><p>I used skrollr to add this scoll effect to the page. </p></div>
+
+
+
+  </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Game of Thrones</title>
+    <link rel="stylesheet" type="text/css" href="GOT.css">
+    <link href="https://fonts.googleapis.com/css?family=Aref+Ruqaa" rel="stylesheet">
+    <script type="text/javascript" src='http://code.jquery.com/jquery-1.10.2.min.js'></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $("img").click(function(){
+          var house = "http://www.anapioficeandfire.com/api/houses/" + $(this).attr("number");
+          console.log(house);
+          $.get(house, function(res){
+            console.log(res);
+            console.log(res.name);
+            var html = "<h2>House Details</h2><p>Name: " + res.name + "</p><p>Words: " + res.words + "</p><p>Titles: ";
+            for(var i = 0; i < res.titles.length; i++) {
+              html += res.titles[i];
+              if(i != (res.titles.length - 1)){
+                html += ", ";
+              }
+            };
+            $("#houseInfo").html(html);
+            $("#houseInfo").css("border", ".1em solid black");
+          }, "json");
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <img src="baratheon.png" alt="House Baratheon of Kings Landing" number="17">
+    <img src="lannister.jpg" alt="House_Lannister" number="229">
+    <img src="stark.jpg" alt="House_Stark" number="362">
+    <img src="targaryen.jpg" alt="House_Targaryen" number="378">
+    <div id="houseInfo">
+    </div>
+  </body>
+</html>

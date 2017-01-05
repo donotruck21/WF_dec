@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Date Validations</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="date.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+      $( function() {
+        $( "#leaving" ).datepicker();
+      } );
+      $( function() {
+        $( "#returning" ).datepicker();
+      } );
+      $( function() {
+        $( "#dialog" ).dialog({
+          autoOpen: false
+        });
+      });
+
+
+
+      $(document).on( "click", "#button", function() {
+        var message = "";
+
+        if ($("input[id='name']").val() == "") {
+          $("#fail").html("<p>Your name can&#39;t be blank</p>");
+          $("#fail").css("color", "red");
+        }
+        else if ($("input[id='leaving']").val() == "") {
+          $("#fail").html("<p>Your leaving date can&#39;t be blank</p>");
+          $("#fail").css("color", "red");
+        }
+        else if ($("input[id='returning']").val() == "") {
+          $("#fail").html("<p>Your returning date can&#39;t be blank</p>");
+          $("#fail").css("color", "red");
+        }
+
+        else {
+          $("#fail").html("");
+          message = "Thanks " + $("#name").val() + "! Your cruise leaves on " + $("#leaving").val() + " and returns on " + $("#returning").val() + "!";
+          $("#dialog").html(message);
+          $("#dialog").dialog( "open" );
+          
+        }
+    });
+
+    </script>
+  </head>
+  <body>
+      <h1>Welcome to Mick's Cruise Planner!</h1>
+      <form action="#" method="post">
+        <label>Date leaving:
+          <input id="leaving" type="text">
+        </label>
+        <label>Date returning:
+          <input id="returning" type="text">
+        </label>
+        <label>Name:
+          <input id="name" type="text">
+        </label>
+      </form>
+      <button id="button" type="button">Check Dates!</button>
+      <div id="fail">
+      </div>
+      <div id="dialog" title="Confirmation">
+      </div>
+  </body>
+</html>

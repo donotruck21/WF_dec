@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Weather App</title>
+    <link rel="stylesheet" type="text/css" href="weather.css">
+    <script type="text/javascript" src='http://code.jquery.com/jquery-1.10.2.min.js'></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $('form').submit(function() {
+        var url = "http://api.openweathermap.org/data/2.5/weather?q=" + $('input[name="city"]').val() + "&appid=239e6fde9faa579b757271f765178e9a";
+        $.get(url, function(res) {
+          var temp = Math.floor(res.main.temp * (9/5) - 459.67);
+          var html = "<h2>" + res.name + ", " + res.sys.country + "</h2><p>Temperature: " + temp + "&deg;F</p>";
+          if (temp < 40){
+            html += "<img src='https://img.buzzfeed.com/buzzfeed-static/static/2014-08/22/11/campaign_images/webdr04/19-things-people-who-are-always-cold-understand-2-24662-1408722447-1_dblbig.jpg'>";
+          }
+          else if (temp < 60) {
+            html += "<img src='http://www.oddizzi.com/wp-content/uploads/2011/01/img-weather-mountcook-newzealand_big.jpg'>";
+          }
+          else if (temp < 90) {
+            html += "<img src='http://everythingwithatwist.com/wp-content/uploads/2015/02/man-beach-everythingwithatwist-05.jpg'>";
+          }
+          else {
+            html += "<img src='http://cache.heater-home.com/images/trying-to-stay-cool.jpg'>";
+          }
+        $("#weather").html(html);
+        console.log(res);
+        }, 'json');
+        // don't forget to return false so the page doesn't refresh
+        return false;
+        });
+      });
+    </script>
+  </head>
+  <body>
+      <h1>What's the weather?</h1>
+      <h3>Enter your city name to find out the temperature!</h3>
+      <form>
+        <label>
+          City: <input type="text" name="city">
+        </label>
+        <input type="submit" name="submit" value="Search Weather">
+      </form>
+      <div id="weather">
+      </div>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+table {
+  border: 1px solid black;
+}
+
+th {
+  padding-right: 100px;
+}
+
+h1 {
+  margin-bottom: -15px;
+}
+
+div {
+  width: 285px;
+}
+
+hr {
+  color: black;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  text-align: right;
+}
+
+form {
+  width: 235px;
+  margin-left: 50px;
+}

@@ -1,0 +1,22 @@
+body {
+  width: 1000px;
+  background-image: url("cheap_diagonal_fabric.png");;
+}
+
+h1 {
+  text-align: center;
+}
+
+img {
+  margin: 20px;
+}
+
+button {
+  height: 50px;
+  width: 100px;
+  margin-left: 20px;
+  color: white;
+  background-color: green;
+  border-radius: 10px;
+  border: 2px solid black;
+}

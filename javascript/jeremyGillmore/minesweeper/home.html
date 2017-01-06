@@ -6,6 +6,7 @@
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
    </head>
    <body>
+     <!-- the map div must be created before the script is run as the script tries to add things to the map div itself -->
      <h1>MineSweeper</h1>
      <div id = "map">
      </div>
@@ -55,6 +56,7 @@
         y = Number(y);
         if (x < mapHeight && x >= 0 && y < mapWidth && y >=0){
           var id = "#"+x+"-"+y;
+          //checking to see if background color is silver, can just check for the word silver as .css("background-color") returns color in rgb format
           if ($(id).css("background-color") != "rgb(192, 192, 192)"){
             $(id).css("background-color", "silver")
             $(id).html("")

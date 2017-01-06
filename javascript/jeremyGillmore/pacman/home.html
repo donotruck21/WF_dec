@@ -5,6 +5,9 @@
     body{
       background-color: black;
     }
+    div#world{
+      position: absolute;
+    }
     div.row div {
       width: 20px;
       height:20px;
@@ -18,116 +21,126 @@
       background-position: center;
       background-repeat: no-repeat;
     }
-    div.pacman{
+    div#pacman{
       background: url("pacman.gif");
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
+      width: 20px;
+      height: 20px;
+      position: relative;
     }
     div.empty{
+    }
+    div#score{
+      border: 1px solid white;
+      width: 50px;
+      height: 30px;
+      color: white;
+      line-height: 30px;
+      vertical-align: middle;
+      text-align: center;
     }
   </style>
 </head>
 <body>
-  <!-- <div class = "row">
-    <div class= "brick"></div>
-    <div class= "brick"></div>
-    <div class= "brick"></div>
-    <div class= "brick"></div>
-    <div class= "brick"></div>
-    <div class= "brick"></div>
-    <div class= "brick"></div>
-    <div class= "brick"></div>
-    <div class= "brick"></div>
-    <div class= "brick"></div>
-  </div>
-  <div class = "row">
-    <div class= "brick"></div>
-    <div class= "coin"></div>
-    <div class= "coin"></div>
-    <div class= "pacman"></div>
-    <div class= "coin"></div>
-    <div class= "coin"></div>
-    <div class= "brick"></div>
-    <div class= "coin"></div>
-    <div class= "coin"></div>
-    <div class= "brick"></div>
-  </div>
-  <div class = "row">
-    <div class= "brick"></div>
-    <div class= "coin"></div>
-    <div class= "coin"></div>
-    <div class= "coin"></div>
-    <div class= "coin"></div>
-    <div class= "empty"></div>
-    <div class= "coin"></div>
-    <div class= "coin"></div>
-    <div class= "coin"></div>
-    <div class= "brick"></div>
-  </div>
-  <div class = "row">
-    <div class= "brick"></div>
-    <div class= "coin"></div>
-    <div class= "coin"></div>
-    <div class= "coin"></div>
-    <div class= "coin"></div>
-    <div class= "empty"></div>
-    <div class= "coin"></div>
-    <div class= "coin"></div>
-    <div class= "coin"></div>
-    <div class= "brick"></div>
-  </div>
-  <div class = "row">
-    <div class= "brick"></div>
-    <div class= "brick"></div>
-    <div class= "brick"></div>
-    <div class= "brick"></div>
-    <div class= "brick"></div>
-    <div class= "brick"></div>
-    <div class= "brick"></div>
-    <div class= "brick"></div>
-    <div class= "brick"></div>
-    <div class= "brick"></div>
-  </div> -->
   <div id = 'world'></div>
-  <div id = "pacman" </div>
-  list to build
-  have js display world
-  have packman move
+  <div id = "pacman"></div>
   <script>
   var world = [
-      [2,2,2,2,2,2,2,2,2,2],
-      [2,1,1,1,1,1,2,1,1,2],
-      [2,1,1,1,1,1,2,1,1,2],
-      [2,1,1,1,1,1,2,1,1,2],
-      [2,1,1,1,1,1,1,1,1,2],
-      [2,1,1,1,1,1,1,1,1,2],
-      [2,1,1,1,1,1,1,1,1,2],
-      [2,1,1,1,1,1,1,1,1,2],
-      [2,2,2,2,2,2,2,2,2,2]
+      [2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2],
+      [2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2],
+      [2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2],
+      [2,1,1,2,2,2,1,1,1,2,1,1,1,2,2,2,1,2,1,2,1,2,2,2,1,1,1,2,1,2,1,2,2,2,1,2,1,2,1,1,2],
+      [2,1,1,1,2,1,1,1,1,2,1,1,1,2,1,2,1,2,1,2,1,2,1,1,1,1,1,2,1,2,1,2,1,2,1,2,1,2,1,1,2],
+      [2,1,1,1,2,1,1,1,1,2,1,1,1,2,1,2,1,2,1,2,1,2,2,2,1,1,1,1,2,1,1,2,1,2,1,2,1,2,1,1,2],
+      [2,1,1,1,2,1,1,1,1,2,1,1,1,2,1,2,1,2,1,2,1,2,1,1,1,1,1,1,2,1,1,2,1,2,1,2,1,2,1,1,2],
+      [2,1,1,2,2,2,1,1,1,2,2,2,1,2,2,2,1,1,2,1,1,2,2,2,1,1,1,1,2,1,1,2,2,2,1,2,2,2,1,1,2],
+      [2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2],
+      [2,1,1,1,1,1,1,1,1,1,2,2,2,1,2,2,1,2,2,1,2,2,2,1,2,2,2,1,2,2,2,1,1,1,1,1,1,1,1,1,2],
+      [2,1,1,1,1,1,1,1,1,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,1,1,2,1,2,1,1,1,1,1,1,1,1,1,2],
+      [2,1,1,1,1,1,1,1,1,1,2,2,2,1,2,1,2,1,2,1,2,2,2,1,2,2,2,1,2,2,2,1,1,1,1,1,1,1,1,1,2],
+      [2,1,1,1,1,1,1,1,1,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,1,1,2,2,1,1,1,1,1,1,1,1,1,1,2],
+      [2,1,1,1,1,1,1,1,1,1,2,1,2,1,2,1,2,1,2,1,2,2,2,1,2,2,2,1,2,1,2,1,1,1,1,1,1,1,1,1,2],
+      [2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2],
+      [2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2],
+      [2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2],
     ];
+    var pacman = {
+      x:1,
+      y:1
+    }
+    var score = 10;
 
     function displayWorld(){
       var output = '';
       for(var i = 0; i<world.length; i++){
-        output += "\n<div class='row'>"
+        output += "\n<div class='row'>\n"
         for(var j = 0; j<world[i].length; j++){
           if(world[i][j]==2){
-            output += "\n\t<div class='brick'></div>";
+            output += "<div class='brick'></div>";
           }
           if(world[i][j]==1){
-            output += "\n\t<div class='coin'></div>";
+            output += "<div class='coin'></div>";
           }
           if(world[i][j]==0){
-            output += "\n\t<div class='empty'></div>";
+            output += "<div class='empty'></div>";
           }
         }
-        output += "\n</div>"
+        output += "</div>"
       }
+      output += "<div id = 'score'></div>"
       document.getElementById('world').innerHTML = output;
+    }
+    function displayPacman(){
+      document.getElementById('pacman').style.top = pacman.y * 20 +"px";
+      document.getElementById('pacman').style.left = pacman.x * 20 + "px";
+    }
+    function displayScore(){
+      document.getElementById('score').innerHTML = score;
     }
 
     displayWorld();
+    displayPacman();
+    displayScore()
+
+    document.onkeydown = function(e){
+      if(e.keyCode == 37){
+        document.getElementById("pacman").style.transform = "rotate(180deg)";
+        if (world[pacman.y][pacman.x-1] == 2){
+          return;
+        }
+        pacman.x--;
+      }
+      else if(e.keyCode == 38){
+        document.getElementById("pacman").style.transform = "rotate(270deg)";
+        if (world[pacman.y-1][pacman.x] == 2){
+          return;
+        }
+        pacman.y--;
+      }
+      else if(e.keyCode == 39){
+        document.getElementById("pacman").style.transform = "rotate(0deg)";
+        if (world[pacman.y][pacman.x+1] == 2){
+          return;
+        }
+        pacman.x++;
+      }
+      else if(e.keyCode == 40){
+        document.getElementById("pacman").style.transform = "rotate(90deg)";
+        if (world[pacman.y+1][pacman.x] == 2){
+          return;
+        }
+        pacman.y++;
+      }
+      if (world[pacman.y][pacman.x] == 1){
+        world[pacman.y][pacman.x] = 0;
+        score+=10;
+      }
+      displayPacman();
+      displayWorld();
+      displayScore()
+    }
 
   </script>
 </body>

@@ -17,19 +17,21 @@
 	<svg id="svg" xmlns="http://www.w3.org/2000/svg"></svg>
 
 	<script>
-	
+		//first setting the window to the starting window size
 		var svg = document.getElementById('svg')
 		svg.style.height = document.body.clientHeight;
 		svg.style.width = document.body.clientWidth;
 
+		//setting the "playground" window to update with window resizing
 		window.onresize = function(event) {
 			svg.style.height = document.body.clientHeight;
 			svg.style.width = document.body.clientWidth;
-}
+		}
 
-
-		function Circle(cx, cy, html_id){
+		//html id is derived from the counter variable provided when the function is called
+		function Circle(cx, cy, html_id, radius){
 			var html_id = html_id;
+			var radius = radius;
 			this.info = { cx: cx,  cy: cy };
 			//private function that generates a random number
 			var randomNumberBetween = function(min, max){
@@ -37,19 +39,19 @@
 			}
 
 		this.initialize = function(){
-			//give a random velocity for the circle
+			//give a random velocity for the circle by calling the randomNumberBetween function for x and y axis'
 			this.info.velocity = {
 				x: randomNumberBetween(-3,3),
 				y: randomNumberBetween(-3,3)
 			}
 
-			//create a circle
+			//create a circle by calling the makeSVG function
 			var circle = makeSVG('circle',
 				{ 	cx: this.info.cx,
 			  		cy: this.info.cy,
-			  		r:  10,
+			  		r:  radius,
 			  		id: html_id,
-			  		style: "fill: black"
+			  		style: "fill: #000"
 				});
 
 			svg.appendChild(circle);
@@ -59,10 +61,10 @@
 			var el = document.getElementById(html_id);
 
 			//see if the circle is going outside the browser. if it is, reverse the velocity
-			if( this.info.cx >= document.body.clientWidth - 10 || this.info.cx < 10){
+			if( this.info.cx >= (document.body.clientWidth - radius) || this.info.cx < radius){
 				this.info.velocity.x = this.info.velocity.x * -1;
 			}
-			if( this.info.cy >= document.body.clientHeight - 10 || this.info.cy < 10){
+			if( this.info.cy >= (document.body.clientHeight - radius) || this.info.cy < radius){
 				this.info.velocity.y = this.info.velocity.y * -1;
 			}
 
@@ -96,21 +98,47 @@
 				}
 			}
 
-			this.createNewCircle = function(x,y){
-				var new_circle = new Circle(x,y,counter++);
+			this.createNewCircle = function(x,y,r){
+				var new_circle = new Circle(x,y,counter++,r);
 				circles.push(new_circle);
 				// console.log('created a new circle!', new_circle);
 			}
 
 			//create one circle when the game starts
-			this.createNewCircle(document.body.clientWidth/2, document.body.clientHeight/2);
+			this.createNewCircle(document.body.clientWidth/2, document.body.clientHeight/2, 10);
 		}
 
 		var playground = new PlayGround();
 		setInterval(playground.loop, 15);
-
 		document.onclick = function(e) {
-			playground.createNewCircle(e.x,e.y);
+
+
+		  (function(){
+
+			var mousedown_time;
+
+			function getTime(){
+				var date = new Date();
+				return date.getTime();
+			}
+
+			document.onmousedown = function(e){
+				mousedown_time = getTime();
+			}
+			document.onmouseup = function(e){
+				time_pressed = (getTime() - mousedown_time);
+				newCircleRadius = time_pressed / 50;
+				if (newCircleRadius < 10){
+					newCircleRadius = 10;
+				}
+				
+				playground.createNewCircle(e.x,e.y,newCircleRadius);
+				console.log('You held your mouse down for', time_pressed, 'miliseconds.');
+
+			}
+			})();
+
+
 
 		}
 	</script>

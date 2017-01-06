@@ -29,9 +29,10 @@
 		}
 
 		//html id is derived from the counter variable provided when the function is called
-		function Circle(cx, cy, html_id, radius){
+		function Circle(cx, cy, html_id, radius, color){
 			var html_id = html_id;
 			var radius = radius;
+			var circleColor = color;
 			this.info = { cx: cx,  cy: cy };
 			//private function that generates a random number
 			var randomNumberBetween = function(min, max){
@@ -51,7 +52,7 @@
 			  		cy: this.info.cy,
 			  		r:  radius,
 			  		id: html_id,
-			  		style: "fill: #000"
+			  		style: "fill: " + circleColor
 				});
 
 			svg.appendChild(circle);
@@ -98,14 +99,14 @@
 				}
 			}
 
-			this.createNewCircle = function(x,y,r){
-				var new_circle = new Circle(x,y,counter++,r);
+			this.createNewCircle = function(x,y,r,color){
+				var new_circle = new Circle(x,y,counter++,r, color);
 				circles.push(new_circle);
 				// console.log('created a new circle!', new_circle);
 			}
 
 			//create one circle when the game starts
-			this.createNewCircle(document.body.clientWidth/2, document.body.clientHeight/2, 10);
+			this.createNewCircle(document.body.clientWidth/2, document.body.clientHeight/2, 10, "#000");
 		}
 
 		var playground = new PlayGround();
@@ -131,8 +132,17 @@
 				if (newCircleRadius < 10){
 					newCircleRadius = 10;
 				}
-				
-				playground.createNewCircle(e.x,e.y,newCircleRadius);
+
+			function random_color(){
+				var rgb = ['a','b','c','d','e','f','0','1','2','3','4','5','6','7','8','9'];
+        color = '#'  //this is what we'll return!
+        for(var i = 0; i < 6; i++){
+        	x = Math.floor((Math.random()*16))
+          color += rgb[x];
+         }
+         return color;
+      }
+				playground.createNewCircle(e.x,e.y,newCircleRadius, random_color());
 				console.log('You held your mouse down for', time_pressed, 'miliseconds.');
 
 			}

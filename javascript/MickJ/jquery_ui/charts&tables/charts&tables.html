@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Charts and Tables</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script type="text/javascript" src="../tablesorter/jquery.tablesorter.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script>
+      $(document).ready(function() {
+        $("#table").tablesorter({sortList: [[0,0], [1,0]]});
+        $(function () {
+    Highcharts.chart('container', {
+        chart: {
+            plotBackgroundColor: null,
+            plotBorderWidth: null,
+            plotShadow: false,
+            type: 'pie'
+        },
+        title: {
+            text: 'Browser market shares January, 2015 to May, 2015'
+        },
+        tooltip: {
+            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+        },
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                dataLabels: {
+                    enabled: true,
+                    format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                    style: {
+                        color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                    }
+                }
+            }
+        },
+        series: [{
+            name: 'Brands',
+            colorByPoint: true,
+            data: [{
+                name: 'Microsoft Internet Explorer',
+                y: 56.33
+            }, {
+                name: 'Chrome',
+                y: 24.03,
+                sliced: true,
+                selected: true
+            }, {
+                name: 'Firefox',
+                y: 10.38
+            }, {
+                name: 'Safari',
+                y: 4.77
+            }, {
+                name: 'Opera',
+                y: 0.91
+            }, {
+                name: 'Proprietary or Undetectable',
+                y: 0.2
+            }]
+        }]
+    });
+});
+      })
+    </script>
+  </head>
+  <body>
+    <div id="container" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
+    <table id="table" class="tablesorter">
+    <thead>
+    <tr>
+        <th>Last Name</th>
+        <th>First Name</th>
+        <th>Email</th>
+        <th>Due</th>
+        <th>Web Site</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>Smith</td>
+        <td>John</td>
+        <td>jsmith@gmail.com</td>
+        <td>$50.00</td>
+        <td>http://www.jsmith.com</td>
+    </tr>
+    <tr>
+        <td>Bach</td>
+        <td>Frank</td>
+        <td>fbach@yahoo.com</td>
+        <td>$50.00</td>
+        <td>http://www.frank.com</td>
+    </tr>
+    <tr>
+        <td>Doe</td>
+        <td>Jason</td>
+        <td>jdoe@hotmail.com</td>
+        <td>$100.00</td>
+        <td>http://www.jdoe.com</td>
+    </tr>
+    <tr>
+        <td>Conway</td>
+        <td>Tim</td>
+        <td>tconway@earthlink.net</td>
+        <td>$50.00</td>
+        <td>http://www.timconway.com</td>
+    </tr>
+    </tbody>
+    </table>
+  </body>
+</html>

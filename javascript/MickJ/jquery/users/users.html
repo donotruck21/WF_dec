@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Users</title>
+    <link rel="stylesheet" type="text/css" href="users.css">
+    <script type="text/javascript" src='http://code.jquery.com/jquery-1.10.2.min.js'></script>
+  <script type="text/javascript">
+      $(document).ready(function(){
+
+        $("#add_user").click(function(){
+          var addition = "<tr>";
+          addition += '<td>' + $("input[name='first_name']").val() + "</td>";
+          addition += '<td>' + $("input[name='last_name']").val() + "</td>";
+          addition += '<td>' + $("input[name='email']").val() + "</td>";
+          addition += '<td>' + $("input[name='phone']").val() + "</td>";
+          addition += "</tr>";
+          $("tbody").append(addition);
+        });
+
+      });
+    </script>
+  </head>
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Email Address</th>
+          <th>Contact #</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+    <div>
+      <h1>Add User</h1>
+      <hr>
+      <form action="#" method="post">
+        <label>
+          First Name: <input type="text" name="first_name" placeholder="John, Suzie, etc...">
+        </label>
+        <label>
+          Last Name: <input type="text" name="last_name" placeholder="Johnson, Smith, etc...">
+        </label>
+        <label>
+          Email Address: <input type="text" name="email" placeholder="john@email.com, etc...">
+        </label>
+        <label>
+          Contact No.: <input type="text" name="phone" placeholder="(888)555-1234, etc...">
+        </label>
+        <label>
+        <input id="add_user" type="button" name="Add User" value="Add User">
+      </label>
+      </form>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,19 @@
+body{
+  text-align: center;
+  background: url("http://vignette1.wikia.nocookie.net/gameofthrones/images/7/71/Westeros_HBO.png/revision/latest?cb=20111113154717");
+  background-size: cover;
+}
+img {
+  height: 150px;
+  width: 300px;
+  margin: 5px;
+}
+
+#houseInfo {
+  background: url("cork-wallet.png");
+  
+  font-family: 'Aref Ruqaa', serif;
+  width: 600px;
+  margin: 0 auto;
+  border-radius: 10px;
+}

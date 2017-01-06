@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>DOJO ARENAAAAAAAA</title>
+    <link rel="stylesheet" type="text/css" href="Dojo_arena.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js">
+    </script>
+    <link href="https://fonts.googleapis.com/css?family=Audiowide" rel="stylesheet">
+    <script type='text/javascript'>
+
+      $(document).ready(function(){
+
+        $(".stage-button").hover(function() {
+          var image = "url(" + $(this).attr("data-image") + ")";
+          $("#background").css("background", image);
+          $("#background").css("background-size", "cover");
+        });
+
+        $(".stage-button").click(function() {
+          var image = "url(" + $(this).attr("data-image") + ")";
+          $("#background").css("background", image);
+          $("#background").css("background-size", "cover");
+          $("#stage_selector").html('<h2>Select Players</h2><select id="select1"><option>Donny</option><option>Leo</option><option>Mikey</option><option>Raphael</option></select><select id="select2"><option>Donny</option><option>Leo</option><option>Mikey</option><option>Raphael</option></select><button type="button>PLAY</button>"');
+        });
+      });
+
+      function playerSelect(selection, player) {
+        var option = $(player).find("option:selected").text();
+        switch(option){
+          case "Donny" :
+          $(selection).html("<img src='dojo_arena_photos/donny.png'>")
+          break;
+          case "Leo" :
+          $(selection).html("<img src='dojo_arena_photos/leo.png'>")
+          break;
+          case "Mikey" :
+          $(selection).html("<img src='dojo_arena_photos/mikey.png'>")
+          break;
+          case "Raphael" :
+          $(selection).html("<img src='dojo_arena_photos/raphael.png'>")
+          break;
+          }
+      }
+
+      $(document).on("change", "#select1", function(){
+        playerSelect("#player_one", "#select1");
+      })
+
+      $(document).on("change", "#select2", function(){
+          playerSelect("#player_two", "#select2");
+      });
+
+    </script>
+  </head>
+  <body>
+    <div id="background">
+      <div id="stage_selector">
+        <h1>Select Arena</h1>
+        <button class="stage-button" type="button" data-image="dojo_arena_photos/beach.jpg">Beach</button>
+        <button class="stage-button" type="button" data-image="dojo_arena_photos/dojo.jpg">Dojo</button>
+        <button class="stage-button" type="button" data-image="dojo_arena_photos/earth.jpg">Earth</button>
+        <button class="stage-button" type="button" data-image="dojo_arena_photos/forest.jpg">Forest</button>
+        <button class="stage-button" type="button" data-image="dojo_arena_photos/matrix.jpg">Matrix</button>
+        <button class="stage-button" type="button" data-image="dojo_arena_photos/snow.jpg">Snow</button>
+      </div>
+      <div class="player" id="player_one">
+      </div>
+      <div class="player" id="player_two">
+      </div>
+    </div>
+  </body>
+</html>

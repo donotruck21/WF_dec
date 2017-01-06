@@ -1,0 +1,74 @@
+body {
+  width: 900px;
+  background: url("cork-wallet.png");
+  font-family: garamond, helvetica, sans-serif;
+  background: url(ignasi_pattern_s.png);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+label {
+  display: block;
+  margin: 0px 15px 20px 0px;
+}
+
+input {
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+#form {
+  margin-left: 20px;
+  width: 250px;
+  font-size: 1.1em;
+  display: inline-block;
+  vertical-align: top;
+}
+
+#form p {
+  margin: 60px 0px 30px 0px;
+}
+
+textarea {
+  margin-bottom: 20px;
+  border: 1px solid black;
+  height: 100px;
+  width: 220px;
+  border-radius: 5px;
+}
+
+textarea {
+  display: block;
+}
+
+button {
+  margin: 0px 30px 0px 0px;
+  height: 40px;
+  width: 80px;
+  font-family: helvetica;
+  color: white;
+  background: linear-gradient(rgb(237, 122, 122), rgb(119, 58, 51));
+  border: 1px solid black;
+  border-radius: 10px;
+  box-shadow: 3px 3px 3px black;
+}
+
+#cards {
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 250px;
+}
+
+.card {
+  height: 150px;
+  width: 300px;
+  text-align: center;
+  border: 1px solid black;
+  margin-bottom: 20px;
+  background: url("cork-wallet.png");
+  box-shadow: 5px 5px 3px black;
+  border-radius: 10px;
+}

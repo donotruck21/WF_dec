@@ -28,68 +28,76 @@
 		function Circle(cx, cy, html_id, radius, color){
 			var circleColor = color;
 			//var html_id = html_id;
-			this.info = { cx: cx,  cy: cy, r: radius, html_id: html_id};
+			this.info = { cx: cx,  cy: cy, r: radius, html_id: html_id, color: color};
 			//private function that generates a random number
 			var randomNumberBetween = function(min, max){
 				return Math.random()*(max-min) + min;
 			}
 
-		this.initialize = function(){
-			//give a random velocity for the circle by calling the randomNumberBetween function for x and y axis'
-			this.info.velocity = {
-				x: randomNumberBetween(-3,3),
-				y: randomNumberBetween(-3,3)
-			}
+			this.initialize = function(){
+				//give a random velocity for the circle by calling the randomNumberBetween function for x and y axis'
+				this.info.velocity = {
+					x: randomNumberBetween(-3,3),
+					y: randomNumberBetween(-3,3)
+				}
 
-			//create a circle by calling the makeSVG function
-			var circle = makeSVG('circle',
-				{ 	cx: this.info.cx,
-			  		cy: this.info.cy,
-			  		r:  this.info.r,
-			  		id: this.info.html_id,
-			  		style: "fill: " + circleColor
-				});
+				//create a circle by calling the makeSVG function
+				var circle = makeSVG('circle',
+					{ 	cx: this.info.cx,
+				  		cy: this.info.cy,
+				  		r:  this.info.r,
+				  		id: this.info.html_id,
+							color: this.info.color,
+				  		style: "fill: " + circleColor
+					});
 
-			svg.appendChild(circle);
-			}
+				svg.appendChild(circle);
+				}
 
-		this.update = function(time){
-			var el = document.getElementById(html_id);
+			this.update = function(time){
+				var el = document.getElementById(html_id);
 
-			//see if the circle is going outside the browser. if it is, reverse the velocity
-			if( this.info.cx >= (document.body.clientWidth - this.info.r) || this.info.cx < this.info.r){
-				this.info.velocity.x = this.info.velocity.x * -1;
-			}
-			if( this.info.cy >= (document.body.clientHeight - this.info.r) || this.info.cy < this.info.r){
-				this.info.velocity.y = this.info.velocity.y * -1;
-			}
-			if((this.info.cx - this.info.r) < 0){
-				this.info.cx = 1 + this.info.r;
-			}
-			if((this.info.cx + this.info.r) > document.body.clientWidth){
-				this.info.cx = document.body.clientWidth - this.info.r - 1;
-			}
-			if((this.info.cy - this.info.r) < 0){
-				this.info.cy = 1 + this.info.r;
-			}
-			if((this.info.cy + this.info.r) > document.body.clientHeight){
-				this.info.cy = document.body.clientHeight - this.info.r - 1;
-			}
+				//see if the circle is going outside the browser. if it is, reverse the velocity. In the nested portion, checks to see if the growth of the ball
+				//will put it outside of the browser. if so it makes sure it stays inside of the browser before reversing direction, keeping the ball from getting
+				//"stuck" on the edge.
+				if( this.info.cx >= (document.body.clientWidth - (el.getAttribute("r"))) || this.info.cx < (el.getAttribute("r"))){
+					if((this.info.cx - parseInt(el.getAttribute("r"))) < 0){
+						this.info.cx = 1 + parseInt(el.getAttribute("r"));
+					}
+					if((this.info.cx + parseInt(el.getAttribute("r"))) > document.body.clientWidth){
+						this.info.cx = document.body.clientWidth - parseInt(el.getAttribute("r")) - 1;
+					}
+					this.info.velocity.x = this.info.velocity.x * -1;
+				}
+				if( this.info.cy >= (document.body.clientHeight - (el.getAttribute("r"))) || this.info.cy < (el.getAttribute("r"))){
+					if((this.info.cy - parseInt(el.getAttribute("r"))) < 0){
+						this.info.cy = 1 + parseInt(el.getAttribute("r"));
+					}
+					if((this.info.cy + parseInt(el.getAttribute("r"))) > document.body.clientHeight){
+						this.info.cy = document.body.clientHeight - parseInt(el.getAttribute("r")) - 1;
+					}
+					this.info.velocity.y = this.info.velocity.y * -1;
+				}
 
-			this.info.cx = this.info.cx + this.info.velocity.x*time;
-			this.info.cy = this.info.cy + this.info.velocity.y*time;
+				this.info.cx = this.info.cx + this.info.velocity.x*time;
+				this.info.cy = this.info.cy + this.info.velocity.y*time;
 
-			el.setAttribute("cx", this.info.cx);
-			el.setAttribute("cy", this.info.cy);
-			//el.setAttribute("r", this.info.r);     for instant change to larger size
+				el.setAttribute("cx", this.info.cx);
+				el.setAttribute("cy", this.info.cy);
 
-			//for 'animating' to larger size
-			if (el.getAttribute("r") < this.info.r){
-				el.setAttribute("r", parseFloat(el.getAttribute("r")) + (1/2));
+				//for growing larger ball by the size of the smaller ball instantly
+				//el.setAttribute("r", this.info.r);
+
+				//for 'animating' to larger or smaller size
+				if (el.getAttribute("r") < this.info.r){
+					el.setAttribute("r", parseInt(el.getAttribute("r")) + 1);
+				} else if (el.getAttribute("r") > this.info.r){
+					el.setAttribute("r", parseInt(el.getAttribute("r")) - 1);
+				}
+				//for changing the color fill after setColor() function determines the new color info
+				el.setAttribute("style", "fill: " + this.info.color);
 			}
-		}
-
-		//creates the SVG element and returns it
+			//creates the SVG element and returns it
 			var makeSVG = function(tag, attrs) {
 	        var el= document.createElementNS('http://www.w3.org/2000/svg', tag);
 	        for (var k in attrs){
@@ -97,6 +105,30 @@
 	        }
 	        return el;
 	  	}
+			//the setColor function changes a circle's color info after it "absorbs" a smaller circle. Color change is
+			//weighted by the difference in size between the circles
+			setColor = function(big_r, small_r, colors){
+				var bigWeight = big_r / small_r;
+				var smallWeight = 1
+				var colorVal = ""
+				var colorCodes = [];
+				var r, g, b;
+				for(var i = 0; i < colors.length; i++){
+					if(colors[i] >= 0 && colors[i] <= 9){
+						colorVal += colors[i];
+						if(!(colors[i + 1] <= 9) && !(colors[i + 1] >= 0)){
+							colorVal = parseInt(colorVal);
+							colorCodes.push(colorVal);
+							colorVal = "";
+						}
+					}
+				}
+				r = Math.floor(((colorCodes[0] * bigWeight) + colorCodes[3]) / (bigWeight + smallWeight));
+				g = Math.floor(((colorCodes[1] * bigWeight) + colorCodes[4]) / (bigWeight + smallWeight));
+				b = Math.floor(((colorCodes[2] * bigWeight) + colorCodes[5]) / (bigWeight + smallWeight));
+				newColor = "rgb(" + r + ", " + g + ", " + b + ")";
+				return newColor;
+			}
 
 	    this.initialize();
 		}
@@ -106,15 +138,19 @@
 			var circles = [ ]; //array that will hold all the circles created in the app
 
 			var distance = function(ix, iy, jx, jy){
-			 return Math.sqrt( ((ix-jx)*(ix-jx)) + ((iy-jy)*(iy-jy)) );
-
+			  return Math.sqrt( ((ix-jx)*(ix-jx)) + ((iy-jy)*(iy-jy)) );
 			}
 
 			//a loop that updates the circle's position on the screen
 			this.loop = function(){
 				for(circle in circles){
 					circles[circle].update(1);
-					//testing collision detection in between these comments.
+					//if a circle is too big for the screen, reduce its radius by 10
+					if(((circles[circle].info.r * 2) > document.body.clientWidth) || ((circles[circle].info.r * 2) > document.body.clientHeight)){
+						//console.log("circle is too big!");
+						circles[circle].info.r -= 10;
+					}
+					//for collision detection
 					for(var i = 0; i < circles.length; i++){
 						var ix = circles[i].info.cx;
 						var iy = circles[i].info.cy;
@@ -126,7 +162,7 @@
 								var id_i = document.getElementById(circles[i].info.html_id);
 								var id_j = document.getElementById(circles[j].info.html_id);
 
-								//remove circles upon collision
+								//to remove circles upon collision
 								/*
 								circles.splice(i,1);
 								circles.splice(j,1);
@@ -134,19 +170,24 @@
 								document.getElementById("svg").removeChild(id_j);
 								*/
 
-								//combine circles on collision (animation activated by code in lines 79-80, instant growth to circle size activated by code in line 76)
-
+								//to combine circles on collision (animation activated by code in lines 92-95, instant growth to circle size activated by code in line 89)
 								if(circles[j].info.r > circles[i].info.r){
 									circles[j].info.r += circles[i].info.r;
+									circles[j].info.color += circles[i].info.color;
+									circles[j].info.color = setColor(circles[j].info.r, circles[i].info.r, circles[j].info.color);
+									console.log(circles[j].info.color);
 									circles.splice(i,1);
 									document.getElementById("svg").removeChild(id_i);
 								} else {
 									circles[i].info.r += circles[j].info.r;
+									circles[i].info.color += circles[j].info.color;
+									circles[i].info.color = setColor(circles[i].info.r, circles[j].info.r, circles[i].info.color);
+									console.log(circles[i].info.color);
 									circles.splice(j,1);
 									document.getElementById("svg").removeChild(id_j);
 								}
 
-								//bounce circles off of each other on collision...currently only completely reverses direction of both circles.
+								//to bounce circles off of each other on collision...currently only completely reverses direction of both circles.
 								/*
 								ir = circles[i].info.r;
 								jr = circles[j].info.r;
@@ -159,9 +200,6 @@
 									circles[j].info.velocity.y *= -1;
 								}
 								*/
-
-
-
 							}
 						}
 					}
@@ -173,58 +211,58 @@
 				circles.push(new_circle);
 			}
 
-		//create one circle when the game starts
-		this.createNewCircle(document.body.clientWidth/2, document.body.clientHeight/2, 10, "#000");
+
+			//create one circle when the game starts
+			this.createNewCircle(document.body.clientWidth/2, document.body.clientHeight/2, 10, "rgb(0, 0, 0)");
 		}
 
 		var playground = new PlayGround();
 		setInterval(playground.loop, 15);
 		document.onclick = function(e) {
+			(function(){
+				var mousedown_time;
 
-
-		  (function(){
-
-			var mousedown_time;
-
-			function getTime(){
-				var date = new Date();
-				return date.getTime();
-			}
-
-			document.onmousedown = function(e){
-				mousedown_time = getTime();
-			}
-			document.onmouseup = function(e){
-				time_pressed = (getTime() - mousedown_time);
-				if (typeof time_pressed !== "number"){
-					newCircleRadius = 10;
-				} else {
-					newCircleRadius = time_pressed / 50;
-					if (newCircleRadius < 10){
-						newCircleRadius = 10;
-					}
+				function getTime(){
+					var date = new Date();
+					return date.getTime();
 				}
 
+				document.onmousedown = function(e){
+					mousedown_time = getTime();
+				}
 
-			function random_color(){
-				var hex = ['a','b','c','d','e','f','0','1','2','3','4','5','6','7','8','9'];
-        color = '#'
-        for(var i = 0; i < 6; i++){
-        	x = Math.floor((Math.random()*16))
-          color += hex[x];
-         }
-         return color;
-      }
-				playground.createNewCircle(e.x,e.y,newCircleRadius, random_color());
+				document.onmouseup = function(e){
+					time_pressed = (getTime() - mousedown_time);
+					if (typeof time_pressed != "number"){
+						newCircleRadius = 10;
+					} else {
+						newCircleRadius = Math.floor(time_pressed / 50);
+						if (newCircleRadius < 10){
+							newCircleRadius = 10;
+						}
+					}
 
-
-			}
+				function random_color(){
+					//rgb color instead of hex for easier combining of circle colors
+					var red, green, blue, color
+					red = Math.floor((Math.random()*256));
+					green = Math.floor((Math.random()*256));
+					blue = Math.floor((Math.random()*256));
+					color = "rgb( " + red + ", " + green + ", " + blue + ")";
+					/*
+					var hex = ['a','b','c','d','e','f','0','1','2','3','4','5','6','7','8','9'];
+	        color = '#'
+	        for(var i = 0; i < 6; i++){
+	        	x = Math.floor((Math.random()*16))
+	          color += hex[x];
+	         }
+					 */
+	         return color;
+	      }
+					playground.createNewCircle(e.x,e.y,newCircleRadius, random_color());
+				}
 			})();
-
-
-
 		}
 	</script>
-
 </body>
 </html>
